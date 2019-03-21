@@ -10,21 +10,23 @@ namespace Ejercicio2
     {
         static void Main(string[] args)
         {
-            double numeroUsuario = 0;
-            double numeroAuxiliar;
+            double numeroUsuario;
+            string numeroAuxiliar;
           
         
 
             Console.Title = "Ejercicio Nro 02";
 
-            
             do
             {
+
                 Console.Write("Ingrese un numero: ");
 
-                if (double.TryParse(Console.ReadLine(), out numeroAuxiliar)) //devuelve bool
+                numeroAuxiliar = Console.ReadLine();
+
+                if (double.TryParse(numeroAuxiliar, out numeroUsuario)) //devuelve bool
                 {
-                    numeroUsuario = numeroAuxiliar;
+                    Console.WriteLine("El número es {0}", numeroUsuario);
                 }
                 
                 if(numeroUsuario < 0)

@@ -16,7 +16,8 @@ namespace Ejercicio01
             int i=0;
             int acumuladorNumeros = 0;
             float promedio;
-            int numeroAuxiliar;
+            string numeroAuxiliar;
+            int numeroUsuario;
         
 
             Console.Title = "Ejercicio Nro 01";
@@ -24,18 +25,21 @@ namespace Ejercicio01
             Console.WriteLine("Ingrese 5 números:");
             do
             {
-                if (int.TryParse(Console.ReadLine(), out numeroAuxiliar)) //devuelve bool
-                {
-                    acumuladorNumeros += numeroAuxiliar;
+                numeroAuxiliar = Console.ReadLine();
 
-                    if (numeroAuxiliar > maximo)
+
+                if (int.TryParse(numeroAuxiliar, out numeroUsuario)) //devuelve bool
+                {
+                    acumuladorNumeros += numeroUsuario;
+
+                    if (numeroUsuario > maximo)
                     {
-                        maximo = numeroAuxiliar;
+                        maximo = numeroUsuario;
                     }
 
-                    if (numeroAuxiliar < minimo)
+                    if (numeroUsuario < minimo)
                     {
-                        minimo = numeroAuxiliar;
+                        minimo = numeroUsuario;
                     }
 
                 }
