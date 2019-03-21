@@ -1,0 +1,7 @@
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\bin\Debug\Clase_05.exe.config
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\bin\Debug\Clase_05.exe
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\bin\Debug\Clase_05.pdb
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\obj\Debug\Clase_05.csprojAssemblyReference.cache
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\obj\Debug\Clase_05.csproj.CoreCompileInputs.cache
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\obj\Debug\Clase_05.exe
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_05\obj\Debug\Clase_05.pdb
