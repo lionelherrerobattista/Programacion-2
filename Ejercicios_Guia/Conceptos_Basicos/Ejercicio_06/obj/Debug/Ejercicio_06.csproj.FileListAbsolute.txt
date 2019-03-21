@@ -1,0 +1,6 @@
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\bin\Debug\Clase_06.exe.config
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\bin\Debug\Clase_06.exe
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\bin\Debug\Clase_06.pdb
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\obj\Debug\Ejercicio_06.csproj.CoreCompileInputs.cache
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\obj\Debug\Clase_06.exe
+C:\Users\lion_\Desktop\workspace\Programacion-2\Ejercicios_Guia\Clase_01\Clase_06\obj\Debug\Clase_06.pdb

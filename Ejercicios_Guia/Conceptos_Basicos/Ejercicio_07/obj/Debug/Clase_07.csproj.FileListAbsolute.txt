@@ -1,0 +1,6 @@
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\bin\Debug\Clase_07.exe.config
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\bin\Debug\Clase_07.exe
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\bin\Debug\Clase_07.pdb
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\obj\Debug\Clase_07.csproj.CoreCompileInputs.cache
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\obj\Debug\Clase_07.exe
+D:\VisualStudio\L\Programacion-2\Clase_01\Clase_07\obj\Debug\Clase_07.pdb
