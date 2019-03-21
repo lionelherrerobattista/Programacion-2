@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_01", "Clase_01\Ejercicio_01.csproj", "{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_02", "Ejercicio2\Ejercicio_02.csproj", "{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_03", "Ejercicio_03\Ejercicio_03.csproj", "{247802CB-6789-4F3A-9790-7BF638F589DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_04", "Ejercicio_04\Ejercicio_04.csproj", "{7411158C-4C0D-484C-A594-DA9125BA4831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_05", "Clase_05\Ejercicio_05.csproj", "{99285891-ECC6-4BDD-B869-C4B1F563C1D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_01", "Ejercicio_01\Ejercicio_01.csproj", "{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_06", "Clase_06\Ejercicio_06.csproj", "{42E326EC-CD4B-4B97-BBC6-7F1923DAB40C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_02", "Ejercicio_02\Ejercicio_02.csproj", "{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_07", "Clase_07\Ejercicio_07.csproj", "{6DFD3541-20A0-4584-8093-3B09CE835D3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_05", "Ejercicio_05\Ejercicio_05.csproj", "{99285891-ECC6-4BDD-B869-C4B1F563C1D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_06", "Ejercicio_06\Ejercicio_06.csproj", "{42E326EC-CD4B-4B97-BBC6-7F1923DAB40C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_07", "Ejercicio_07\Ejercicio_07.csproj", "{6DFD3541-20A0-4584-8093-3B09CE835D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{247802CB-6789-4F3A-9790-7BF638F589DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{247802CB-6789-4F3A-9790-7BF638F589DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{247802CB-6789-4F3A-9790-7BF638F589DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +31,14 @@ Global
 		{7411158C-4C0D-484C-A594-DA9125BA4831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7411158C-4C0D-484C-A594-DA9125BA4831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7411158C-4C0D-484C-A594-DA9125BA4831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27B3B03-4AB8-4E2B-A937-D6FB4A8BCDE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DB19EA-23ED-4B8F-B8CA-773FC99AD6E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99285891-ECC6-4BDD-B869-C4B1F563C1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99285891-ECC6-4BDD-B869-C4B1F563C1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99285891-ECC6-4BDD-B869-C4B1F563C1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
