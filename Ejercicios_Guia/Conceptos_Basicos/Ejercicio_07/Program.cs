@@ -12,32 +12,23 @@ namespace Clase_07
         static void Main(string[] args)
         {
             string auxiliarNacimiento;
+            int i;
             int dia = 0;
             int mes = 0;
             int anio = 0;
             int diaHoy = 0;
-            int mesHoy = 0;
+            int contadorBisiesto = 0;
             int anioHoy = 0;
             int aniosVividos = 0;
             int diasVividos = 0;
-            int mesesCalculo = 0;
-            int diasCalculo = 0;
-            int diasTotalesUsuario = 0;
-            int diasTotalesActual = 0;
-            int resultado = 0;
-            string fechaHoy;
 
             Console.Title = "Ejercicio Nro 07";
 
-            DateTime fechaActual = DateTime.Now;
 
-            fechaHoy = fechaActual.ToString("d", DateTimeFormatInfo.InvariantInfo);
-            Console.WriteLine(fechaHoy);
+            diaHoy = DateTime.Now.DayOfYear; //obtengo el numero de día
+            anioHoy = DateTime.Now.Year;
 
 
-            int.TryParse(fechaHoy.Substring(3, 2), out diaHoy);
-            int.TryParse(fechaHoy.Substring(0, 2), out mesHoy);
-            int.TryParse(fechaHoy.Substring(6, 4), out anioHoy);
 
             Console.WriteLine("Ingresá tu fecha de nacimiento:");
 
@@ -56,14 +47,73 @@ namespace Clase_07
 
                     if (int.TryParse(auxiliarNacimiento, out anio))//año
                     {
-                        aniosVividos = (anioHoy - 1) - anio;
-                        diasVividos = aniosVividos * 365;
-                        //Sin contar ultimo año
-                        Console.WriteLine(aniosVividos);
-                        Console.WriteLine(diasVividos);
+                        
+                        if(anio != anioHoy)
+                        {
+                            //primer año
+                            for (i = mes; i <= 12; i++)
+                            {
+                                if (i % 2 == 0 || i == 9 || i == 11)
+                                {
+                                    if(i != 2)
+                                    {
+                                        if(i == 12 || i == 8 || i == 10)
+                                        {
+                                            diasVividos += 31;
+                                        }
+                                        else
+                                        {
+                                            diasVividos += 30;
+                                        }
+
+                                        
+                                    }
+                                    else
+                                    {
+                                        diasVividos += 28;
+                                    }
+                                    
+                                }
+                                else
+                                {
+                                    diasVividos += 31;
+                                }
+
+                            }
+                            Console.WriteLine(diasVividos);
+                            //le resto el día que nació
+                            diasVividos -= dia;
+
+                            //Sin contar primer año ni ultimo año
+                            if(anioHoy - anio > 1)
+                            {
+                                for (i = anio; i <= anioHoy; i++)
+                                {
+                                    if (i % 4 == 0)
+                                    {
+                                        if (i % 100 != 0 || (i % 100 == 0 && i % 400 == 0)) //si es multiplo de 100 y de 400, es bisiesto
+                                        {
+
+                                            contadorBisiesto++;
+                                        }
+                                    }
+                                }
+
+                                //Cuento el resto de los años teniendo en cuenta los bisiestos
+                                aniosVividos = anioHoy - (anio + 1);
+                                aniosVividos -= contadorBisiesto;
+                                diasVividos += (aniosVividos * 365) + contadorBisiesto;
+                            }
+
+
+                        }
+                        
+
                         //Contando ultimo año
-                         
-                        resultado = diasCalculo;
+                        diasVividos += diaHoy;
+
+                        //Muestro
+                        Console.WriteLine(diasVividos);
 
                         Console.ReadKey();
                     }
