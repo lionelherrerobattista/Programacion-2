@@ -4,38 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_09
+namespace Ejercicio_10
 {
-    class Ejercicio_09
+    class Program
     {
         static void Main(string[] args)
         {
-            string auxiliarNumero;
             int altura;
             int ancho = 1;
             int i;
             int j;
+            string auxiliarNumero;
 
-            Console.Title = "Ejercicio Nro 10";
-
-            Console.WriteLine("Ingrese la altura del triángulo: ");
+            //Pido la altura
+            Console.Write("Ingrese la altura del triángulo: ");
             auxiliarNumero = Console.ReadLine();
 
-            if(int.TryParse(auxiliarNumero, out altura))
+            if(Int32.TryParse(auxiliarNumero, out altura))
             {
-                for(i = 0; i < altura; i++)
+                //Dibujo el triángulo al revés
+                for(i = altura; i > 0; i--)
                 {
+                    //Primero más espacios que asteriscos
+                    for(j = altura - 1; j > 0; j--)
+                    {
+                        Console.Write(" ");
+                    }
+
                     for(j = 0; j < ancho; j++)
                     {
-                        Console.Write('*');
+                        Console.Write("*");
                     }
+
                     Console.WriteLine();
-                    ancho++;
+                    //sumo al ancho y resto a la altura
+                    ancho += 2;//Me muevo de impar a impar
+                    altura--;//resto para dibujar el triángulo al revés
                 }
+
 
             }
 
             Console.ReadKey();
+
         }
     }
 }
