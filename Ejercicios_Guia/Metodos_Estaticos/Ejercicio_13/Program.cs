@@ -11,58 +11,25 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_13
 {
-    class Conversor
-    {
-        //Convierte un número de decimal a binario
-        public static string DecimalBinario(double numero)
-        {
-            string binario = "";
-            string retorno = "";
-            int i;
 
-            do
-            {
-                //Si es par
-                if(numero % 2 == 0)
-                {
-                    binario += "0";                    
-                }
-                else
-                {
-                    binario += "1";
-                }
-
-                //divido
-                numero = numero / 2;
-  
-            } while (numero > 1 );
-
-            for (i = binario.Length - 1; i > 0; i-- )
-            {
-                retorno += binario[i];
-            }
-
-            return binario;
-        }
-
-        /*
-        static double BinarioDecimal(string numero)
-        {
-
-        }*/
-    }
-    class Program
+    class Ejercicio_13
     {
         static void Main(string[] args)
         {
             double numero;
+            double numeroDos;
             string binario;
 
-            numero = 10;
+            Console.Title = "Ejercicio Nro 13";
+
+            numero = 25;
 
             binario = Conversor.DecimalBinario(numero);
 
             Console.WriteLine(binario);
+
+            numeroDos = Conversor.BinarioDecimal(binario);
+            Console.WriteLine("Vuelvo a convertir: {0}",numeroDos);
 
             Console.ReadKey();
 

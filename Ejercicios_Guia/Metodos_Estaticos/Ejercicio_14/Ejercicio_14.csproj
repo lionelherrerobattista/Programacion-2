@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{136E36BF-23D4-4D3B-B610-2B46A7B3689E}</ProjectGuid>
+    <ProjectGuid>{707C23FD-720C-4C3F-BE57-5CB07BBEEA2E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ejercicio_13</RootNamespace>
-    <AssemblyName>Ejercicio_13</AssemblyName>
+    <RootNamespace>Ejercicio_14</RootNamespace>
+    <AssemblyName>Ejercicio_14</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conversor.cs" />
+    <Compile Include="CalculoDeArea.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
