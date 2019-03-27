@@ -17,5 +17,24 @@ namespace Ejercicio_14
 
             return area;
         }
+
+        public static double CalcularTriangulo(double baseTriangulo, double alturaTriangulo)
+        {
+            double area;
+
+            area = (baseTriangulo * alturaTriangulo) / 2;
+
+            return area;
+        }
+
+        public static double CalcularCirculo(double radio)
+        {
+            double area;
+
+            area = Math.Pow((Math.PI * radio), 2);
+
+            return area;
+        }
+
     }
 }
