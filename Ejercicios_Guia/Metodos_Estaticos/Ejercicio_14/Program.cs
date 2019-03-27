@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_14
 {
-    class Program
+    class Ejercicio_14
     {
         static void Main(string[] args)
         {
@@ -18,6 +18,8 @@ namespace Ejercicio_14
             double radioCirculo;
             double areaCirculo;
             string numeroAuxiliar;
+
+            Console.Title = "Ejercicio Nro 14";
 
             //Cuadrado
             Console.Write("Ingrese la base del cuadrado: ");
@@ -53,10 +55,6 @@ namespace Ejercicio_14
                 }
 
             }
-
-
-
-
 
             //Círculo
 
