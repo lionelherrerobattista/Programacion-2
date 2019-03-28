@@ -34,7 +34,7 @@ namespace Ejercicio_15
                     }
                     else
                     {
-                        Console.WriteLine("\nNo se puede dividir por cero.");
+                        Console.WriteLine("\n\nNo se puede dividir por cero.");
                     }
                     break;
             }
