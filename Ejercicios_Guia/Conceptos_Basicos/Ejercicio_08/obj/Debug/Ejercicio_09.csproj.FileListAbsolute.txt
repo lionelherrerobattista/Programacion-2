@@ -1,7 +1,0 @@
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\obj\Debug\Ejercicio_09.csprojAssemblyReference.cache
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\obj\Debug\Ejercicio_09.csproj.CoreCompileInputs.cache
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\bin\Debug\Ejercicio_09.exe.config
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\bin\Debug\Ejercicio_09.exe
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\bin\Debug\Ejercicio_09.pdb
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\obj\Debug\Ejercicio_09.exe
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_09\obj\Debug\Ejercicio_09.pdb

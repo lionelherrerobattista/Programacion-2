@@ -1,6 +1,0 @@
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\bin\Debug\Ejercicio_10.exe.config
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\bin\Debug\Ejercicio_10.exe
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\bin\Debug\Ejercicio_10.pdb
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\obj\Debug\Ejercicio_09.csproj.CoreCompileInputs.cache
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\obj\Debug\Ejercicio_10.exe
-D:\workspace\Programacion-2\Ejercicios_Guia\Conceptos_Basicos\Ejercicio_10\obj\Debug\Ejercicio_10.pdb
