@@ -17,11 +17,12 @@ namespace Ejercicio_16
 
             Console.Title = "Ejercicio Nro 16";
 
+            //Creo los objetos Alumno
             Alumno alumnoUno = new Alumno();
             Alumno alumnoDos = new Alumno();
             Alumno alumnoTres = new Alumno();
 
-            //Ingreso datos alumnoUno
+            //Ingreso datos alumnoUno (utilizo operador punto)
             Console.WriteLine("Alumno 1:");
 
             Console.Write("Nombre: ");
@@ -50,11 +51,16 @@ namespace Ejercicio_16
             {
 
             }
-
+            //Ingreso nota1 y nota2 a través del método estudiar
             alumnoUno.Estudiar(notaUno, notaDos);
+
+            //Calculo la notaFinal invocando el método!!
             alumnoUno.CalcularFinal();
+
+            //Muestro los parámetros del obj utilizando el método Mostrar()
             Console.WriteLine("\nDatos alumno:\n{0}", alumnoUno.Mostrar());
 
+            //Repito para los demás alumnos:
             //Ingreso datos alumnoDos
             Console.WriteLine("\nAlumno 2:");
 

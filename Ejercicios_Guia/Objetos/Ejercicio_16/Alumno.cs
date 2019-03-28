@@ -8,6 +8,7 @@ namespace Ejercicio_16
 {
     class Alumno
     {
+        //Parámetros de alumno:
         private byte nota1;
         private byte nota2;
         private float notaFinal;
@@ -19,9 +20,9 @@ namespace Ejercicio_16
         {
             if(nota1 >= 4 && nota2 >= 4)
             {
-                Random r = new Random();
+                Random r = new Random();//genero un objeto random
 
-                notaFinal = r.Next(1, 11);
+                notaFinal = r.Next(1, 11);//máx. no incluído
             }
             else
             {
@@ -30,7 +31,7 @@ namespace Ejercicio_16
 
         }
 
-        public void Estudiar(byte notaUno, byte notaDos)
+        public void Estudiar(byte notaUno, byte notaDos)//para guardar las notas
         {
             nota1 = notaUno;
             nota2 = notaDos;
@@ -38,8 +39,9 @@ namespace Ejercicio_16
 
         public string Mostrar()
         {
-            string datosAlumno;
+            string datosAlumno;//string que voy a devolver
 
+            //Ingreso los datos y concateno
             datosAlumno = "Nombre: " + nombre + "\nApellido: " + apellido
                 + "\nLegajo: " + legajo.ToString() + "\nNota 1: " + nota1.ToString()
                 + "\nNota 2: " + nota2.ToString();
