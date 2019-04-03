@@ -29,7 +29,7 @@ namespace Repaso
 
         public static string MostrarProducto(Producto p)
         {
-            return String.Format("Codigo de Barra: {0}\nMarca: {1}\nPrecio:{2}\n", p.codigoDeBarra, p.marca, p.precio);
+            return String.Format("  {0,-10}{1,13}{2,10}\n", p.codigoDeBarra, p.marca, p.precio);
         }
 
         public static bool operator !=(Producto p, string marca)

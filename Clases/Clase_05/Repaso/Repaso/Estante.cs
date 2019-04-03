@@ -31,8 +31,8 @@ namespace Repaso
             int i;
             string informacion;
             //estante
-            informacion = String.Format("Ubicación estante: {0}\n", e.ubicacionEstante);
-            
+            informacion = String.Format("Ubicación estante: {0}\n\n", e.ubicacionEstante);
+            informacion += String.Format("{0,-20}{1,-10}{2,-10}\n", "Codigo de Barra", "Marca", "Precio");
             //detalle de cada uno de los productos
             for (i = 0; i < e.productos.Length; i++)
             {
