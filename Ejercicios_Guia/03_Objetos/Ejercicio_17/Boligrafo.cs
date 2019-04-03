@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ejercicio_17
+namespace Boligrafos
 {
     class Boligrafo
     {
