@@ -13,7 +13,7 @@ namespace Ejercicio_19
         
         public static explicit operator int (Sumador s)
         {
-            return s.cantidadSumas;
+            return (int)s.cantidadSumas;
         }
 
         public static bool operator |(Sumador s1, Sumador s2)
