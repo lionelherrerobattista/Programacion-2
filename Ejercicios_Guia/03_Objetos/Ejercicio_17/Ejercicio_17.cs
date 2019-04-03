@@ -6,17 +6,32 @@ namespace Ejercicio_17
     {
         static void Main(string[] args)
         {
-            short tintaBoligrafo;
+            string dibujo = "";
 
-            tintaBoligrafo = 100;
-
-            Boligrafo boligrafoAzul = new Boligrafo(tintaBoligrafo, ConsoleColor.Blue);
-
-            tintaBoligrafo = 50;
-
-            Boligrafo boligrafoRojo = new Boligrafo(tintaBoligrafo, ConsoleColor.Red);
+            //Creo los objetos boligrafo:
+            Boligrafo boligrafoAzul = new Boligrafo(100, ConsoleColor.Blue);
+            Boligrafo boligrafoRojo = new Boligrafo(50, ConsoleColor.Red);
 
             Console.Title = "Ejercicio Nro 17";
+
+            //Programa:
+
+            //Establezco el color de la letra
+            Console.ForegroundColor = boligrafoAzul.GetColor();
+            //Pinto
+            boligrafoAzul.Pintar(30, out dibujo);
+            //Muestro el dibujo
+            Console.Write("{0}\n", dibujo);
+
+            Console.ForegroundColor = boligrafoRojo.GetColor();
+            //Pinto
+            boligrafoRojo.Pintar(7, out dibujo);
+            //Muestro el dibujo
+            Console.Write("{0}\n", dibujo);
+
+            Console.ReadKey();
+
+
         }
     }
 }

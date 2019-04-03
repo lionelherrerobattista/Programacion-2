@@ -38,7 +38,9 @@ namespace Ejercicio_17
             short auxiliarTinta;
             bool pinto = false;
 
-            if(this.tinta > 0)
+            dibujo = "";
+
+            if(this.tinta > 0 && gasto > 0)
             {
                 pinto = true;
 
@@ -46,18 +48,18 @@ namespace Ejercicio_17
 
                 //resto
                 this.SetTinta(auxiliarTinta);
-
-                for(i = this.tinta; i >= 0; i--)
+             
+                for(i = this.tinta; i > 0; i--)
                 {
-                    
+                    dibujo += "*";
+                    gasto--;
+
+                    if(gasto == 0)
+                    {
+                        break;
+                    }
                 }
-
             }
-
-
-
-
-
 
             return pinto;
         }
@@ -89,10 +91,22 @@ namespace Ejercicio_17
             }
 
             //compruebo si no me paso
-            if(auxiliarTinta >= 0 && auxiliarTinta <= cantidadTintaMaxima)
+            if(auxiliarTinta >= 0 && auxiliarTinta <cantidadTintaMaxima)
             {
                 this.tinta = auxiliarTinta;
             }
+            else
+            {
+                if(auxiliarTinta <= 0)
+                {
+                    this.tinta = 0;
+                }
+                else
+                {
+                    this.tinta = cantidadTintaMaxima;
+                }
+                
+            }    
 
         }
 
