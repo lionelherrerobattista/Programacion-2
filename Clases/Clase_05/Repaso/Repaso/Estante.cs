@@ -59,10 +59,10 @@ namespace Repaso
 
                 for (i = 0; i < e.productos.Length; i++)
                 {
-                    if(estanteAuxiliar.productos[i] == p)
+                    if(estanteAuxiliar.productos[i] == p)//encuentro el producto
                     {
                         estanteAuxiliar.productos[i] = null;//Le saco la referencia
-                        break;
+                        break;//solo está una vez
                     }
                 }
  
@@ -80,7 +80,7 @@ namespace Repaso
             {
                 for(i = 0; i < e.productos.Length; i++)
                 {
-                    if(Object.Equals(e.productos[i], null))
+                    if(Object.Equals(e.productos[i], null))//usar Equals para comparar con null
                     {
                         e.productos[i] = p;
                         agrego = true;
