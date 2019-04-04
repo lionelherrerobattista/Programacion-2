@@ -56,6 +56,7 @@ namespace Billetes
         {
             return cotizRespectoDolar;
         }
+
     }
 
     class Euro
@@ -107,6 +108,119 @@ namespace Billetes
             return cotizRespectoDolar;
         }
 
+        //Sobrecarga de operadores
+        public static bool operator !=(Euro e, Dolar d)
+        {
+            bool distinto = false;
+
+            if (e.GetCantidad() != d.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Euro e, Pesos p)
+        {
+            bool distinto = false;
+
+            if (e.GetCantidad() != p.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Euro e1, Euro e2)
+        {
+            bool distinto = false;
+
+            if (e1.GetCantidad() != e2.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static Euro operator -(Euro e, Dolar d)
+        {
+            Euro resultado = new Euro();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = e.GetCantidad() - (d.GetCantidad() * Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Euro operator -(Euro e, Pesos p)
+        {
+            Euro resultado = new Euro();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = e.GetCantidad() - ((p.GetCantidad() / Pesos.GetCotizacion())* Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Euro operator +(Euro e, Dolar d)
+        {
+            Euro resultado = new Euro();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = e.GetCantidad() + (d.GetCantidad() * Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Euro operator +(Euro e, Pesos p)
+        {
+            Euro resultado = new Euro();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = e.GetCantidad() + ((p.GetCantidad() / Pesos.GetCotizacion()) * Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static bool operator ==(Euro e, Dolar d)
+        {
+            bool iguales = false;
+
+            if (e.GetCantidad() == d.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Euro e, Pesos p)
+        {
+            bool iguales = false;
+
+            if (e.GetCantidad() == p.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Euro e1, Euro e2)
+        {
+            bool iguales = false;
+
+            if (e1.GetCantidad() == e2.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
     }
 
     class Dolar
@@ -117,7 +231,7 @@ namespace Billetes
         //Constructores
         private Dolar()
         {
-            new Euro(0);
+            new Dolar(0);
         }
 
         public Dolar(double cantidad)
@@ -156,6 +270,121 @@ namespace Billetes
         {
             return cotizRespectoDolar;
         }
+
+        //Sobrecarga de operadores
+        public static bool operator !=(Dolar d, Euro e)
+        {
+            bool distinto = false;
+
+            if (d.GetCantidad() != e.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Dolar d, Pesos p)
+        {
+            bool distinto = false;
+
+            if (d.GetCantidad() != p.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Dolar d1, Dolar d2)
+        {
+            bool distinto = false;
+
+            if(d1.GetCantidad() != d2.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static Dolar operator -(Dolar d, Euro e)
+        {
+            Dolar resultado = new Dolar();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = d.GetCantidad() - (e.GetCantidad() / Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Dolar operator -(Dolar d, Pesos p)
+        {
+            Dolar resultado = new Dolar();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = d.GetCantidad() - (p.GetCantidad() / Pesos.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Dolar operator +(Dolar d, Euro e)
+        {
+            Dolar resultado = new Dolar();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = d.GetCantidad() + (e.GetCantidad() / Euro.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Dolar operator +(Dolar d, Pesos p)
+        {
+            Dolar resultado = new Dolar();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = d.GetCantidad() + (p.GetCantidad() * Pesos.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static bool operator ==(Dolar d, Euro e)
+        {
+            bool iguales = false;
+
+            if (d.GetCantidad() == e.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Dolar d, Pesos p)
+        {
+            bool iguales = false;
+
+            if (d.GetCantidad() == p.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Dolar d1, Dolar d2)
+        {
+            bool iguales = false;
+
+            if (d1.GetCantidad() == d2.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+
 
     }
 
