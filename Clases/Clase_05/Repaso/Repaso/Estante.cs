@@ -36,7 +36,7 @@ namespace Repaso
             //detalle de cada uno de los productos
             for (i = 0; i < e.productos.Length; i++)
             {
-                if(!(Object.Equals(e.productos[i], null)))
+                if(!(Object.Equals(e.productos[i], null)))//si no está vacío, muestro
                 {
                     informacion += Producto.MostrarProducto(e.productos[i]);
                 }
