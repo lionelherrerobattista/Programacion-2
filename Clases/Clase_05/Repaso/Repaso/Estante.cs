@@ -57,7 +57,7 @@ namespace Repaso
             {
                 estanteAuxiliar = e;
 
-                for (i = 0; i < e.productos.Length-1; i++)
+                for (i = 0; i < e.productos.Length; i++)
                 {
                     if(estanteAuxiliar.productos[i] == p)
                     {
