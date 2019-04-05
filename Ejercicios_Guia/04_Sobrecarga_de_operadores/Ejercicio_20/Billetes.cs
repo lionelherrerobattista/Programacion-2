@@ -43,7 +43,9 @@ namespace Billetes
         //para operar pesos con pesos(?)
         public static implicit operator Pesos(double d)
         {
-            return (Pesos)d;
+            Pesos p1 = new Pesos(d);
+
+            return p1;
         }
 
         //Métodos:
@@ -55,6 +57,119 @@ namespace Billetes
         public static float GetCotizacion()
         {
             return cotizRespectoDolar;
+        }
+
+        //Sobrecarga de operadores
+        public static bool operator !=(Pesos p, Dolar d)
+        {
+            bool distinto = false;
+
+            if (p.GetCantidad() != d.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Pesos p, Euro e)
+        {
+            bool distinto = false;
+
+            if (p.GetCantidad() != e.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static bool operator !=(Pesos p1, Pesos p2)
+        {
+            bool distinto = false;
+
+            if (p1.GetCantidad() != p2.GetCantidad())
+            {
+                distinto = true;
+            }
+
+            return distinto;
+        }
+
+        public static Pesos operator -(Pesos p, Dolar d)
+        {
+            Pesos resultado = new Pesos();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = p.GetCantidad() - (d.GetCantidad() / Dolar.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Pesos operator -(Pesos p, Euro e)
+        {
+            Pesos resultado = new Pesos();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = p.GetCantidad() - ((e.GetCantidad() * Euro.GetCotizacion()) * Pesos.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Pesos operator +(Pesos p, Dolar d)
+        {
+            Pesos resultado = new Pesos();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = p.GetCantidad() + (d.GetCantidad() / Dolar.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static Pesos operator +(Pesos p, Euro e)
+        {
+            Pesos resultado = new Pesos();
+
+            //Tomo la cantidad y hago la conversión de la otra moneda
+            resultado = p.GetCantidad() + ((e.GetCantidad() * Euro.GetCotizacion()) * Pesos.GetCotizacion());
+
+            return resultado;
+        }
+
+        public static bool operator ==(Pesos p, Dolar d)
+        {
+            bool iguales = false;
+
+            if (p.GetCantidad() == d.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Pesos p, Euro e)
+        {
+            bool iguales = false;
+
+            if (p.GetCantidad() == e.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator ==(Pesos p1, Pesos p2)
+        {
+            bool iguales = false;
+
+            if (p1.GetCantidad() == p2.GetCantidad())
+            {
+                iguales = true;
+            }
+
+            return iguales;
         }
 
     }
@@ -247,17 +362,19 @@ namespace Billetes
         //Sobrecarga operadores (compatibilidad distintos tipos de datos):
         public static explicit operator Euro(Dolar d)//Para poder operar con Euro
         {
-            return (Euro)d;
+            return d.GetCantidad() * Euro.GetCotizacion();
         }
 
         public static explicit operator Pesos(Dolar d)//Para poder operar con Pesos
         {
-            return (Pesos)d;
+            return d.GetCantidad() / Pesos.GetCotizacion();
         }
 
         public static implicit operator Dolar(double d)
         {
-            return (Dolar)d;
+            Dolar d1 = new Dolar(d);
+
+            return d1;
         }
 
         //Métodos:
