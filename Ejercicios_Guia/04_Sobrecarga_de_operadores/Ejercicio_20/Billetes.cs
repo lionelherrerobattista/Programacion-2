@@ -28,22 +28,24 @@ namespace Billetes
             cotizRespectoDolar = cotizacion;
         }
 
-        //Sobrecarga tipos de datos (compatibilidad distintos tipos de datos):
-        public static explicit operator Dolar(Pesos d)//Para poder operar con Dolar
+        //Conversión de Pesos a Dolares
+        public static explicit operator Dolar(Pesos d)
         {
-            return (Dolar)d;
+            return d.GetCantidad() / Pesos.GetCotizacion();
         }
 
-        public static explicit operator Euro(Pesos d)//Para poder operar con Pesos
+        //Conversion de Pesos a Euros
+        public static explicit operator Euro(Pesos d)
         {
-            return (Euro)d;
+            //Lo paso a dólares primero y, después, a euros
+            return (d.GetCantidad() / Pesos.GetCotizacion()) / Euro.GetCotizacion();
         }
 
         //Compatibilidad implícita con el mismo tipo de dato
         //para operar pesos con pesos(?)
         public static implicit operator Pesos(double d)
         {
-            Pesos p1 = new Pesos(d);
+            Pesos p1 = new Pesos(d);//le paso la cantidad
 
             return p1;
         }

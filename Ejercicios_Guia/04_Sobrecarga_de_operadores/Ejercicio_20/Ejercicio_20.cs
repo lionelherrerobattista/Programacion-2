@@ -27,10 +27,9 @@ namespace Ejercicio_20
             }
 
             //Pruebo operadores
-            d1 = d1 - e1;
-            p2 = p1 + e1;
+            p1 -= d1;
 
-            Console.WriteLine(d1.GetCantidad());
+            Console.WriteLine(p1.GetCantidad());
 
             Console.ReadKey();
 
