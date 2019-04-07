@@ -28,13 +28,13 @@ namespace Billetes
             cotizRespectoDolar = cotizacion;
         }
 
-        //Conversión de Pesos a Dolares
+        //Conversión de Pesos a Dolares usando el operador (Dolar)
         public static explicit operator Dolar(Pesos d)
         {
             return d.GetCantidad() / Pesos.GetCotizacion();
         }
 
-        //Conversion de Pesos a Euros
+        //Conversion de Pesos a Euros usando el operador (Euro)
         public static explicit operator Euro(Pesos d)
         {
             //Lo paso a dólares primero y, después, a euros
@@ -47,7 +47,7 @@ namespace Billetes
         {
             Pesos p1 = new Pesos(d);//le paso la cantidad
 
-            return p1;
+            return p1;//devuelve un objeto pesos con esa cantidad
         }
 
         //Métodos:
@@ -61,7 +61,7 @@ namespace Billetes
             return cotizRespectoDolar;
         }
 
-        //Sobrecarga de operadores
+        //Sobrecarga de operadores, comparo cantidades
         public static bool operator !=(Pesos p, Dolar d)
         {
             bool distinto = false;
@@ -100,54 +100,47 @@ namespace Billetes
 
         public static Pesos operator -(Pesos p, Dolar d)
         {
-            Pesos resultado = new Pesos();
+            Pesos conversionPesos = new Pesos();//creo un objeto para poder convertir y operar
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = p.GetCantidad() - (d.GetCantidad() / Dolar.GetCotizacion());
+            conversionPesos = (Pesos) d;//Conversión explícita a pesos
+            
+            //devuelvo el resultado de la resta
+            return p.GetCantidad() - conversionPesos.GetCantidad();
 
-            return resultado;
         }
 
         public static Pesos operator -(Pesos p, Euro e)
         {
-            Pesos resultado = new Pesos();
+            Pesos conversionPesos = new Pesos();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = p.GetCantidad() - ((e.GetCantidad() * Euro.GetCotizacion()) * Pesos.GetCotizacion());
+            conversionPesos = (Pesos)e;
 
-            return resultado;
+            return p.GetCantidad() - conversionPesos.GetCantidad();
         }
 
         public static Pesos operator +(Pesos p, Dolar d)
         {
-            Pesos resultado = new Pesos();
+            Pesos conversionPesos = new Pesos();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = p.GetCantidad() + (d.GetCantidad() / Dolar.GetCotizacion());
+            conversionPesos = (Pesos)d;
 
-            return resultado;
+            return p.GetCantidad() + conversionPesos.GetCantidad();
+
         }
 
         public static Pesos operator +(Pesos p, Euro e)
         {
-            Pesos resultado = new Pesos();
+            Pesos conversionPesos = new Pesos();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = p.GetCantidad() + ((e.GetCantidad() * Euro.GetCotizacion()) * Pesos.GetCotizacion());
+            conversionPesos = (Pesos)e;
 
-            return resultado;
+            return e.GetCantidad() - conversionPesos.GetCantidad();
         }
 
         public static bool operator ==(Pesos p, Dolar d)
         {
-            bool iguales = false;
 
-            if (p.GetCantidad() == d.GetCantidad())
-            {
-                iguales = true;
-            }
-
-            return iguales;
+            return !(p != d);
         }
 
         public static bool operator ==(Pesos p, Euro e)
@@ -197,20 +190,22 @@ namespace Billetes
             cotizRespectoDolar = cotizacion;
         }
 
-        //Sobrecarga operadores (compatibilidad distintos tipos de datos):
-        public static explicit operator Dolar(Euro d)//Para poder operar con Dolar
+        //Sobrecarga operadores:
+        public static explicit operator Dolar(Euro d)//Conversion Euro a Dolar
         {
-            return (Dolar)d;
+            return d.GetCantidad() * Euro.GetCotizacion();
         }
 
         public static explicit operator Pesos(Euro d)//Para poder operar con Pesos
         {
-            return (Pesos)d;
+            return (d.GetCantidad() * Euro.GetCotizacion()) * Pesos.GetCotizacion();
         }
 
         public static implicit operator Euro(double d)
         {
-            return (Euro)d;
+            Euro e1 = new Euro(d);
+
+            return e1;
         }
 
 
@@ -264,42 +259,38 @@ namespace Billetes
 
         public static Euro operator -(Euro e, Dolar d)
         {
-            Euro resultado = new Euro();
+            Euro conversionEuro = new Euro();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = e.GetCantidad() - (d.GetCantidad() * Euro.GetCotizacion());
+            conversionEuro = (Euro)d;
 
-            return resultado;
+            return e.GetCantidad() - conversionEuro.GetCantidad();
         }
 
         public static Euro operator -(Euro e, Pesos p)
         {
-            Euro resultado = new Euro();
+            Euro conversionEuro = new Euro();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = e.GetCantidad() - ((p.GetCantidad() / Pesos.GetCotizacion())* Euro.GetCotizacion());
+            conversionEuro = (Euro)p;
 
-            return resultado;
+            return e.GetCantidad() - conversionEuro.GetCantidad();
         }
 
         public static Euro operator +(Euro e, Dolar d)
         {
-            Euro resultado = new Euro();
+            Euro conversionEuro = new Euro();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = e.GetCantidad() + (d.GetCantidad() * Euro.GetCotizacion());
+            conversionEuro = (Euro)d;
 
-            return resultado;
+            return e.GetCantidad() + conversionEuro.GetCantidad();
         }
 
         public static Euro operator +(Euro e, Pesos p)
         {
-            Euro resultado = new Euro();
+            Euro conversionEuro = new Euro();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = e.GetCantidad() + ((p.GetCantidad() / Pesos.GetCotizacion()) * Euro.GetCotizacion());
+            conversionEuro = (Euro)p;
 
-            return resultado;
+            return e.GetCantidad() + conversionEuro.GetCantidad();
         }
 
         public static bool operator ==(Euro e, Dolar d)
@@ -364,12 +355,12 @@ namespace Billetes
         //Sobrecarga operadores (compatibilidad distintos tipos de datos):
         public static explicit operator Euro(Dolar d)//Para poder operar con Euro
         {
-            return d.GetCantidad() * Euro.GetCotizacion();
+            return d.GetCantidad() / Euro.GetCotizacion();
         }
 
         public static explicit operator Pesos(Dolar d)//Para poder operar con Pesos
         {
-            return d.GetCantidad() / Pesos.GetCotizacion();
+            return d.GetCantidad() * Pesos.GetCotizacion();
         }
 
         public static implicit operator Dolar(double d)
@@ -429,42 +420,38 @@ namespace Billetes
 
         public static Dolar operator -(Dolar d, Euro e)
         {
-            Dolar resultado = new Dolar();
+            Dolar conversionDolar = new Dolar();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = d.GetCantidad() - (e.GetCantidad() / Euro.GetCotizacion());
+            conversionDolar = (Dolar)e;
 
-            return resultado;
+            return d.GetCantidad() - conversionDolar.GetCantidad();
         }
 
         public static Dolar operator -(Dolar d, Pesos p)
         {
-            Dolar resultado = new Dolar();
+            Dolar conversionDolar = new Dolar();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = d.GetCantidad() - (p.GetCantidad() / Pesos.GetCotizacion());
+            conversionDolar = (Dolar)p;
 
-            return resultado;
+            return d.GetCantidad() - conversionDolar.GetCantidad();
         }
 
         public static Dolar operator +(Dolar d, Euro e)
         {
-            Dolar resultado = new Dolar();
+            Dolar conversionDolar = new Dolar();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = d.GetCantidad() + (e.GetCantidad() / Euro.GetCotizacion());
+            conversionDolar = (Dolar)e;
 
-            return resultado;
+            return d.GetCantidad() + conversionDolar.GetCantidad();
         }
 
         public static Dolar operator +(Dolar d, Pesos p)
         {
-            Dolar resultado = new Dolar();
+            Dolar conversionDolar = new Dolar();
 
-            //Tomo la cantidad y hago la conversión de la otra moneda
-            resultado = d.GetCantidad() + (p.GetCantidad() * Pesos.GetCotizacion());
+            conversionDolar = (Dolar)p;
 
-            return resultado;
+            return d.GetCantidad() + conversionDolar.GetCantidad();
         }
 
         public static bool operator ==(Dolar d, Euro e)
