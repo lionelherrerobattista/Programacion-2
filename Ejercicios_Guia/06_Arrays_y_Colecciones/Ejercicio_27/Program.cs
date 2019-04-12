@@ -31,10 +31,11 @@ namespace Ejercicio_27
                 } while (numero != 0);
             }
 
-            foreach (int num in numeros)
-            {
-                Console.WriteLine(num);
-            }
+
+            Console.WriteLine(numeros.Peek());
+            for(i = 0;)
+            Console.WriteLine(numeros.ElementAt(i);
+
 
             Console.ReadKey();
         }
