@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Equipos
 {
-    class Jugador
+    public class Jugador
     {
         private int dni;
         private string nombre;
@@ -22,7 +22,7 @@ namespace Equipos
         {
             float promedioGoles;
 
-            promedioGoles = totalGoles / partidosJugados;
+            promedioGoles = (float)totalGoles / partidosJugados;
 
             return promedioGoles;
         }
@@ -74,7 +74,9 @@ namespace Equipos
         {
             string datos;
 
-            datos = string.Format("{0} {1} {2} {3} {4}", this.dni,
+            this.promedioGoles = GetPromedioGoles();
+
+            datos = string.Format("{0} {1} {2} {3} {4: #.00}", this.dni,
                 this.nombre, this.partidosJugados, this.totalGoles, this.promedioGoles);
 
             return datos;
@@ -86,7 +88,7 @@ namespace Equipos
         /// <param name="j1">Primer jugador a comparar</param>
         /// <param name="j2">Segundo jugador a comparar</param>
         /// <returns>True si los juga</returns>
-        private static bool operator !=(Jugador j1, Jugador j2)
+        public static bool operator !=(Jugador j1, Jugador j2)
         {
             bool sonDistintos = false;
 
@@ -98,7 +100,7 @@ namespace Equipos
             return sonDistintos;
         }
 
-        private static bool operator ==(Jugador j1, Jugador j2)
+        public static bool operator ==(Jugador j1, Jugador j2)
         {
             return !(j1 != j2);
         }
