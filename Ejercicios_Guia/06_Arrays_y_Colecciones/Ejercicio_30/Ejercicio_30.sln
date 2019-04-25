@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_30", "Ejercicio_30\Ejercicio_30.csproj", "{E1DF7F47-BACF-4D0A-939F-EB6E1A891035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campeonato", "Campeonato\Campeonato.csproj", "{7C6AE19C-E4C7-467D-8731-D9FD9DC68EA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1DF7F47-BACF-4D0A-939F-EB6E1A891035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DF7F47-BACF-4D0A-939F-EB6E1A891035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DF7F47-BACF-4D0A-939F-EB6E1A891035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DF7F47-BACF-4D0A-939F-EB6E1A891035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6AE19C-E4C7-467D-8731-D9FD9DC68EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6AE19C-E4C7-467D-8731-D9FD9DC68EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6AE19C-E4C7-467D-8731-D9FD9DC68EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6AE19C-E4C7-467D-8731-D9FD9DC68EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F34EC813-37A4-4812-BC8F-14D70382B627}
+	EndGlobalSection
+EndGlobal
