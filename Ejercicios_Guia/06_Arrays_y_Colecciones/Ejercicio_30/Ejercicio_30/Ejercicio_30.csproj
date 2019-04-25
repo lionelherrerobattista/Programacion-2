@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Campeonato\Campeonato.csproj">
+      <Project>{7c6ae19c-e4c7-467d-8731-d9fd9dc68ea5}</Project>
+      <Name>Campeonato</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

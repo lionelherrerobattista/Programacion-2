@@ -17,18 +17,48 @@ namespace Campeonato
 
         public AutoF1(short numero, string escuderia)
         {
-            this.enCompetencia = false;
-            this.catidadCombustible = 0;
-            this.vueltasRestantes = 0;
             this.numero = numero;
             this.escuderia = escuderia;
 
+            this.SetEnCompetencia(false);
+            this.SetCombustible(0);
+            this.SetVueltasRestantes(0);
+        }
+
+        public short GetCombustible()
+        {
+            return this.catidadCombustible;
+        }
+
+        public short GetVueltasRestantes()
+        {
+            return this.vueltasRestantes;
+        }
+
+        public bool GetEnCompetencia()
+        {
+            return this.enCompetencia;
+        }
+
+        public void SetCombustible(short cantidadCombustible)
+        {
+             this.catidadCombustible = cantidadCombustible;
+        }
+
+        public void SetVueltasRestantes(short vueltasRestantes)
+        {
+            this.vueltasRestantes = vueltasRestantes;
+        }
+
+        public void SetEnCompetencia(bool enCompetencia)
+        {
+            this.enCompetencia = enCompetencia;
         }
 
         public string MostrarDatos()
         {
-
-            return String.Format("{0} {1} {2} {3}", this.catidadCombustible, this.escuderia, this.numero, this.vueltasRestantes);
+            
+            return String.Format("{0,-10} {1,-10} {2,-10} {3,-10}", this.numero, this.escuderia, this.GetVueltasRestantes(), this.GetCombustible());
         }
 
         public static bool operator !=(AutoF1 a1, AutoF1 a2)
@@ -45,7 +75,8 @@ namespace Campeonato
 
         public static bool operator ==(AutoF1 a1, AutoF1 a2)
         {
-          return !(a1 != a2);
+
+            return !(a1 != a2);
 
         }
 

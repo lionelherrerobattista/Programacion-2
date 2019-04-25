@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Campeonato
 {
-    class Competencia
+    public class Competencia
     {
 
         private short cantidadCompetidores;
@@ -18,7 +18,7 @@ namespace Campeonato
             competidores = new List<AutoF1>();
         }
 
-        public Competencia(short cantidadVueltas, short cantidadCompetidores)
+        public Competencia(short cantidadVueltas, short cantidadCompetidores) : this()
         {    
             this.cantidadVueltas = cantidadVueltas;
             this.cantidadCompetidores = cantidadCompetidores;
@@ -28,10 +28,17 @@ namespace Campeonato
     {
         bool agregoCompetidor = false;
 
-        if(c.competidores.Count < c.cantidadCompetidores && c == a)
+            Random r = new Random();
+
+        if(c.competidores.Count < c.cantidadCompetidores && c != a)
         {
-            c.competidores.Add(a);
-            agregoCompetidor = true;
+
+                c.competidores.Add(a);
+                c.competidores[c.competidores.IndexOf(a)].SetEnCompetencia(true);
+                c.competidores[c.competidores.IndexOf(a)].SetVueltasRestantes(c.cantidadVueltas);
+                c.competidores[c.competidores.IndexOf(a)].SetCombustible((short)r.Next(15,101));
+
+                agregoCompetidor = true;
         }
 
         return agregoCompetidor;
