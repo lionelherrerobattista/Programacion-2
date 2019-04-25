@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-  class Persona
+  abstract class Persona
   {
     private string apellido;
     private int dni;
@@ -49,7 +49,7 @@ namespace Entidades
     {
       StringBuilder datos = new StringBuilder();
 
-      datos.AppendFormat("{0} {1} {2} {3}",this.Apellido, this.Dni, this.Edad, this.Nombre);
+      datos.AppendFormat("{0} {1} {2} {3}", this.Apellido, this.Dni, this.Edad, this.Nombre);
 
       return datos.ToString();
 
@@ -63,13 +63,11 @@ namespace Entidades
       this.dni = dni;
     }
 
-    public abstract bool ValidarAptitud()
-    {
-
-    }
+    public abstract bool ValidarAptitud();
+    
   }
 
-  public class DirectorTecnico : Persona
+  class DirectorTecnico : Persona
   {
     private int añosExperiencia;
 
@@ -109,18 +107,18 @@ namespace Entidades
       bool esValido = false;
 
 
-      if(this.Edad < 65 && this.AñosExperiencia >= 2)
+      if (this.Edad < 65 && this.AñosExperiencia >= 2)
       {
         esValido = true;
       }
 
       return esValido;
-      
+
     }
 
   }
 
-  public class Jugador : Persona
+  class Jugador : Persona
   {
     private float altura;
     private float peso;
@@ -149,7 +147,56 @@ namespace Entidades
         return this.posicion;
       }
     }
-      
 
+    public Jugador(string nombre, string apellido, int edad, int dni, float peso, float altura, Posicion posicion)
+      : base(nombre, apellido, edad, dni)
+    {
+      this.altura = altura;
+      this.peso = peso;
+      this.posicion = posicion;
+    }
+
+    public override string Mostrar()
+    {
+      string datosJugador;
+
+      datosJugador = String.Format("{0} {1} {2} {3}", base.Mostrar(), this.Altura, this.Peso, this.Posicion);
+
+      return datosJugador;
+
+    }
+
+    
+    public override bool ValidarAptitud()
+    {
+      bool esApto = false;
+
+      if(this.Edad < 40 && this.ValidarEstadoFisico() == true)
+      {
+        esApto = true;
+      }
+
+      return esApto;
+    }
+
+    public bool ValidarEstadoFisico()
+    {
+      double IMC;
+      bool esApto = false;
+
+      IMC = Math.Pow((this.Peso / this.Altura), 2);
+
+      if(IMC <= 25 && IMC >= 18.5)
+      {
+        esApto = true;
+      }
+
+      return esApto;
+  
+    }
   }
+
+
+
 }
+
