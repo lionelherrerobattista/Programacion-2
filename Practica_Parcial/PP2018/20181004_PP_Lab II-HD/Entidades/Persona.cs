@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-  abstract class Persona
+  public abstract class Persona
   {
     private string apellido;
     private int dni;
@@ -67,7 +67,7 @@ namespace Entidades
     
   }
 
-  class DirectorTecnico : Persona
+  public class DirectorTecnico : Persona
   {
     private int añosExperiencia;
 
@@ -118,7 +118,7 @@ namespace Entidades
 
   }
 
-  class Jugador : Persona
+  public class Jugador : Persona
   {
     private float altura;
     private float peso;
