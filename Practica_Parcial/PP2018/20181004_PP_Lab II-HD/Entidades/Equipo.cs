@@ -113,7 +113,7 @@ namespace Entidades
       int contadorCentral = 0;
       int contadorDelantero = 0;
 
-      if(!(e.directorTecnico == null))
+      if(e.directorTecnico != null)
       {
         if(e.jugadores.Count() == cantidadMaximaJugadores)
         {

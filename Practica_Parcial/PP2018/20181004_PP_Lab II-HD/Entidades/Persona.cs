@@ -184,7 +184,7 @@ namespace Entidades
       double IMC;
       bool esApto = false;
 
-      IMC = Math.Pow((this.Peso / this.Altura), 2);
+      IMC = this.Peso / Math.Pow( this.Altura, 2);
 
       if(IMC <= 25 && IMC >= 18.5)
       {
