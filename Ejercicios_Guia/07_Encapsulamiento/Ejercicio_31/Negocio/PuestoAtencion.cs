@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio
+namespace Entidades
 {
 
     public class PuestoAtencion
@@ -22,7 +22,7 @@ namespace Negocio
         {
             get
             {
-                numeroActual++;
+                PuestoAtencion.numeroActual++;
 
                 return numeroActual;
             }
@@ -45,12 +45,12 @@ namespace Negocio
 
         }
 
-        private PuestoAtencion()
+        static PuestoAtencion()
         {
-            numeroActual = 0;
+            PuestoAtencion.numeroActual = 0;
         }
 
-        public PuestoAtencion(Puesto puesto): this()
+        public PuestoAtencion(Puesto puesto)
         {
             this.puesto = puesto;
         }

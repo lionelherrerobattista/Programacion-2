@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio
+namespace Entidades
 {
     public class Negocio
     {
@@ -16,14 +16,14 @@ namespace Negocio
         {
             get
             {
-                return clientes.Dequeue();
+                return this.clientes.Dequeue();
             }
             set
             {
-                if(!(clientes.Contains(value)))
-                {
-                    clientes.Enqueue(value);
-                }
+                bool respuesta;
+
+                respuesta = (this + value);
+                
             }
         }
 
@@ -37,7 +37,7 @@ namespace Negocio
 
         private Negocio()
         {
-            clientes = new Queue<Cliente>();
+            this.clientes = new Queue<Cliente>();
             this.caja = new PuestoAtencion(PuestoAtencion.Puesto.Caja1);
         }
 
@@ -45,11 +45,19 @@ namespace Negocio
         {
             this.nombre = nombre;
         }
+
+
+        public static bool operator !=(Negocio n, Cliente c)
+        {
+            return !(n == c);
+        }
+
+
         public static bool operator ~(Negocio n)
         {
             bool clienteAtendido = false;
 
-            if(n.caja.AtenderCliente(n.clientes.Dequeue()))
+            if (n.caja.AtenderCliente(n.Cliente))//uso getter
             {
                 clienteAtendido = true;
             }
@@ -61,29 +69,35 @@ namespace Negocio
         {
             bool agregoCliente = false;
 
-            n.Cliente = c;         
-
             if(n != c)
             {
-                agregoCliente = true;
+                n.clientes.Enqueue(c);//uso setter
+
+                if (n.clientes.Contains(c))
+                {
+                    agregoCliente = true;
+                }
+
             }
 
             return agregoCliente;
         }
 
-        public static bool operator !=(Negocio n, Cliente c)
-        {
-            return !(n == c);
-        }
-            
+
         public static bool operator ==(Negocio n, Cliente c)
         {
             bool sonIguales = false;
 
-            if(n.clientes.Contains(c))
+            foreach (Cliente cliente in n.clientes)
             {
-                sonIguales = true;
+                if (cliente == c)
+                {
+                    sonIguales = true;
+                    break;
+                }
             }
+
+            
 
             return sonIguales;
 

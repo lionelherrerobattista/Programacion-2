@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio
+namespace Entidades
 {
     public class Cliente
     {
@@ -15,7 +15,7 @@ namespace Negocio
         {
             get
             {
-                return nombre;
+                return this.nombre;
             }
             set
             {
@@ -27,16 +27,16 @@ namespace Negocio
         {
             get
             {
-                return numero;
+                return this.numero;
             }
         }
 
-        Cliente(int numero)
+        public Cliente(int numero)
         {
             this.numero = numero;
         }
 
-        Cliente(int numero, string nombre): this(numero)
+        public Cliente(int numero, string nombre): this(numero)
         {
             this.nombre = nombre;
         }
