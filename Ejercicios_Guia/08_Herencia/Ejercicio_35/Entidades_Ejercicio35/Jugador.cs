@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Jugador
+    public class Jugador : Persona
     {
 
-        private int dni;
-        private string nombre;
         private int partidosJugados;
         private int totalGoles;
 
@@ -22,6 +20,10 @@ namespace Entidades
             get
             {
                 return this.partidosJugados;
+            }
+            set
+            {
+                this.partidosJugados = value;
             }
         }
 
@@ -38,6 +40,7 @@ namespace Entidades
 
                 return promedioGoles;
             }
+      
         }
 
         /// <summary>
@@ -49,59 +52,15 @@ namespace Entidades
             {
                 return this.totalGoles;
             }
-        }
-        /// <summary>
-        /// Lectura/Escritura para el nombre del jugador
-        /// </summary>
-        public string Nombre
-        {
-            get
-            {
-                return this.nombre;
-            }
             set
             {
-                this.nombre = value;
+                totalGoles = value;
             }
         }
 
-        /// <summary>
-        /// Lectura/Escritura para el atributo dni
-        /// </summary>
-        public int DNI
+
+        public Jugador(int dni, string nombre) : base(dni, nombre)
         {
-            get
-            {
-                return this.dni;
-
-            }
-            set
-            {
-                this.dni = value;
-            }
-        }
-
-        /// <summary>
-        /// Constructor por defecto del jugador, inicializa
-        /// los datos estadísticos en 0
-        /// </summary>
-        private Jugador()
-        {
-            this.partidosJugados = 0;
-            this.totalGoles = 0;
-
-        }
-
-        /// <summary>
-        /// Constructor de la clase Jugador
-        /// Recibe datos personales
-        /// </summary>
-        /// <param name="dni">Dni del jugador</param>
-        /// <param name="nombre">Nombre del jugador</param>
-        public Jugador(int dni, string nombre)
-        {
-            this.dni = dni;
-            this.nombre = nombre;
 
         }
 
@@ -129,7 +88,7 @@ namespace Entidades
 
 
 
-            datos = string.Format("{0,10} {1,10} {2,10} {3,10} {4,10: #.00}", this.DNI,
+            datos = string.Format("{0,10} {1,10} {2,10} {3,10} {4,10: #.00}", this.Dni,
                 this.Nombre, this.PartidosJugados, this.TotalGoles, this.PromedioGoles);
 
             return datos;
@@ -145,7 +104,7 @@ namespace Entidades
         {
             bool sonDistintos = false;
 
-            if (j1.dni != j2.dni)
+            if (j1.Dni != j2.Dni)
             {
                 sonDistintos = true;
             }
