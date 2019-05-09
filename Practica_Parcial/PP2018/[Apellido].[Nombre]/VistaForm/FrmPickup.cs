@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace VistaForm
 {
-    public partial class Form1 : Form
+    public partial class FrmPickup : Form
     {
-        public Form1()
+        public FrmPickup()
         {
             InitializeComponent();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            PickUp p1 = new PickUp(txtPatente.Text, txtModelo.Text);
+
+            MessageBox.Show(p1.ConsultarDatos());
         }
     }
 }
