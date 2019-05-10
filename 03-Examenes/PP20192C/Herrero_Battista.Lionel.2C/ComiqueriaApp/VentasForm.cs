@@ -44,19 +44,9 @@ namespace ComiqueriaApp
             this.Close();
         }
 
-        private void lblDescripcion_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void lblCantidad_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnVender_Click(object sender, EventArgs e)
         {
-            
 
             if ((int)numericUpDownCantidad.Value > producto.Stock)
             {
@@ -64,12 +54,9 @@ namespace ComiqueriaApp
             }
             else
             {
-                
-
                 comiqueriaActual.Vender(producto, (int)numericUpDownCantidad.Value);
 
                 this.DialogResult = DialogResult.OK;
-                
 
                 this.Close();
                 

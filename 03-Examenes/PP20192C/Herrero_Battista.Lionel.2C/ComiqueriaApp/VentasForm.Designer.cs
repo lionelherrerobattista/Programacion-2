@@ -46,7 +46,6 @@
             this.lblDescripcion.Size = new System.Drawing.Size(74, 13);
             this.lblDescripcion.TabIndex = 0;
             this.lblDescripcion.Text = "Descripción";
-            this.lblDescripcion.Click += new System.EventHandler(this.lblDescripcion_Click);
             // 
             // lblCantidad
             // 
@@ -56,7 +55,6 @@
             this.lblCantidad.Size = new System.Drawing.Size(52, 13);
             this.lblCantidad.TabIndex = 1;
             this.lblCantidad.Text = "Cantidad:";
-            this.lblCantidad.Click += new System.EventHandler(this.lblCantidad_Click);
             // 
             // numericUpDownCantidad
             // 

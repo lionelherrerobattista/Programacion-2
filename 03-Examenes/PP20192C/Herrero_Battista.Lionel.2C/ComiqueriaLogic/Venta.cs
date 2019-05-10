@@ -38,7 +38,7 @@ namespace ComiqueriaLogic
         {
             double resultado;
 
-            resultado = (cantidad * precioUnidad);
+            resultado = cantidad * precioUnidad;
             resultado = resultado + ((double)(porcentajeIva * resultado) / 100);
 
             return resultado;

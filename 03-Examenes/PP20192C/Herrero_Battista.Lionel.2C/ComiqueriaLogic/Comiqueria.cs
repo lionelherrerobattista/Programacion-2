@@ -72,8 +72,7 @@ namespace ComiqueriaLogic
 
         public void Vender(Producto producto)
         {
-            Venta v = new Venta(producto, 1);
-            this.ventas.Add(v);
+            this.Vender(producto, 1);
         }
 
         public void Vender(Producto producto, int cantidad)
