@@ -122,7 +122,7 @@ namespace CentralitaHerencia
 
         }
 
-        public string Mostrar()
+        private string Mostrar()
         {
             StringBuilder datos = new StringBuilder();
 
@@ -137,7 +137,7 @@ namespace CentralitaHerencia
 
             foreach (Llamada llamada in this.Llamadas)
             {
-                datos.AppendFormat("{0}", llamada.Mostrar());
+                datos.AppendFormat("{0}", llamada.ToString());
                 datos.AppendLine();
             }
 
@@ -149,6 +149,47 @@ namespace CentralitaHerencia
             this.Llamadas.Sort(Llamada.OrdenarPorDuracion);
 
         
+        }
+
+        private void AgregarLlamada(Llamada nuevaLlamada)
+        {
+            this.Llamadas.Add(nuevaLlamada);
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
+        public static bool operator !=(Centralita c, Llamada llamada)
+        {
+            return !(c == llamada);
+        }
+
+        public static bool operator ==(Centralita c, Llamada llamada)
+        {
+            bool estaEnLista = false;
+
+            foreach(Llamada auxLlamada in c.Llamadas)
+            {
+                if(auxLlamada == llamada)
+                {
+                    estaEnLista = true;
+                    break;
+                }
+            }
+
+            return estaEnLista;
+        }
+
+        public static Centralita operator +(Centralita c, Llamada nuevaLlamada)
+        {
+            if(c != nuevaLlamada)
+            {
+                c.AgregarLlamada(nuevaLlamada);
+            }
+
+            return c;
         }
     }
 }

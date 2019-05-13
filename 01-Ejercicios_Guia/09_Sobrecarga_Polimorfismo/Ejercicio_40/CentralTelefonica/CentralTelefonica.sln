@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralitaHerencia", "Centr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{EA3ACCEF-41D0-4DF8-A5F4-C161DBFB965D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralitaForm", "CentralitaForm\CentralitaForm.csproj", "{A4ADE4B1-1BB5-4A67-9B11-15F2D1DA3119}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EA3ACCEF-41D0-4DF8-A5F4-C161DBFB965D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3ACCEF-41D0-4DF8-A5F4-C161DBFB965D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3ACCEF-41D0-4DF8-A5F4-C161DBFB965D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4ADE4B1-1BB5-4A67-9B11-15F2D1DA3119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4ADE4B1-1BB5-4A67-9B11-15F2D1DA3119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4ADE4B1-1BB5-4A67-9B11-15F2D1DA3119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4ADE4B1-1BB5-4A67-9B11-15F2D1DA3119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

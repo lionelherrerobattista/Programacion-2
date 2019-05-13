@@ -89,12 +89,23 @@ namespace CentralitaHerencia
 
         public static bool operator !=(Llamada l1, Llamada l2)
         {
-
+            return !(l1 == l2);
         }
 
         public static bool operator ==(Llamada l1, Llamada l2)
         {
-            //utilizar equals
+            bool sonIguales = false;
+
+            if(l1.Equals(l2))
+            {
+                if(l1.NroDestino == l2.NroDestino && l1.NroOrigen == l2.NroOrigen)
+                {
+                    sonIguales = true;
+                }
+                
+            }
+
+            return sonIguales;
         }
             
     }
