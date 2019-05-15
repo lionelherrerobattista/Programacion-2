@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.rtbFacturacionTotal = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // rtbFacturacionTotal
+            // 
+            this.rtbFacturacionTotal.Location = new System.Drawing.Point(0, 0);
+            this.rtbFacturacionTotal.Name = "rtbFacturacionTotal";
+            this.rtbFacturacionTotal.ReadOnly = true;
+            this.rtbFacturacionTotal.Size = new System.Drawing.Size(514, 396);
+            this.rtbFacturacionTotal.TabIndex = 0;
+            this.rtbFacturacionTotal.Text = "";
+            // 
+            // FrmMostrar
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmMostrar";
+            this.ClientSize = new System.Drawing.Size(515, 397);
+            this.Controls.Add(this.rtbFacturacionTotal);
+            this.Name = "FrmMostrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Facturacion Total";
+            this.Load += new System.EventHandler(this.FacturacionTotal_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox rtbFacturacionTotal;
     }
 }

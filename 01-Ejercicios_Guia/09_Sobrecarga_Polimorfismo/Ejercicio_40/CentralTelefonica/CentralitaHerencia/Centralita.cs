@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CentralitaHerencia
 {
     public class Centralita
@@ -131,7 +132,7 @@ namespace CentralitaHerencia
             datos.AppendLine();
             datos.AppendLine("Detalle de llamadas:");
             datos.AppendLine();
-            datos.AppendFormat("{0, 3} {1, 10} {2, 10} {3, 10}\n", "Duracion", "Destino", "Origen", "Costo");
+            datos.AppendFormat("{0, 3} {1, 15} {2, 15} {3, 15}\n", "Duracion", "Destino", "Origen", "Costo");
 
 
 

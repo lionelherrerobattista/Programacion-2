@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace CentralitaHerencia
 {
 
-
     public class Provincial : Llamada
     {
         public enum Franja
@@ -72,7 +71,7 @@ namespace CentralitaHerencia
             StringBuilder datos = new StringBuilder();
 
             datos.AppendFormat("{0}", base.Mostrar());
-            datos.AppendFormat(" {0,-10}", this.CostoLlamada);
+            datos.AppendFormat(" {0,-15}", this.CostoLlamada);
 
             return datos.ToString();
 

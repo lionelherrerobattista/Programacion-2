@@ -15,6 +15,8 @@ namespace CentralitaHerencia
 
     public abstract class Llamada
     {
+
+
         protected float duracion;
         protected string nroDestino;
         protected string nroOrigen;
@@ -63,7 +65,7 @@ namespace CentralitaHerencia
             StringBuilder datos = new StringBuilder();
 
 
-            datos.AppendFormat("   {0, -10} {1, -10} {2, -10}", this.Duracion, this.NroDestino,
+            datos.AppendFormat("   {0, -15} {1, -15} {2, -15}", this.Duracion, this.NroDestino,
                 this.NroOrigen);
 
             return datos.ToString();

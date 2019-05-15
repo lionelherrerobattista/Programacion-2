@@ -29,5 +29,28 @@ namespace CentralitaForm
             llamador.ShowDialog(this);
 
         }
+
+        private void btnFacturacionTotal_Click(object sender, EventArgs e)
+        {
+            FrmMostrar frmFacturacionTotal = new FrmMostrar(nuevaCentralita, TipoLlamada.Todas);
+            frmFacturacionTotal.ShowDialog(this);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnFacturacionLocal_Click(object sender, EventArgs e)
+        {
+            FrmMostrar frmFacturacionTotal = new FrmMostrar(nuevaCentralita, TipoLlamada.Local);
+            frmFacturacionTotal.ShowDialog(this);
+        }
+
+        private void btnFacturacionProvincial_Click(object sender, EventArgs e)
+        {
+            FrmMostrar frmFacturacionTotal = new FrmMostrar(nuevaCentralita, TipoLlamada.Provincial);
+            frmFacturacionTotal.ShowDialog(this);
+        }
     }
 }

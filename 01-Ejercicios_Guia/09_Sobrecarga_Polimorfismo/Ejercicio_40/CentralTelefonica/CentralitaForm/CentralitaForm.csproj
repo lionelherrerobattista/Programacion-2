@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmMostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMostrar.Designer.cs">
+      <DependentUpon>FrmMostrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLlamador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,14 +64,11 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMostrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMostrar.Designer.cs">
-      <DependentUpon>FrmMostrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMostrar.resx">
+      <DependentUpon>FrmMostrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLlamador.resx">
       <DependentUpon>FrmLlamador.cs</DependentUpon>
     </EmbeddedResource>

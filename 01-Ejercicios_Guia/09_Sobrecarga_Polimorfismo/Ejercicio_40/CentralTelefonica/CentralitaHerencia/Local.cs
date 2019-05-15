@@ -27,7 +27,7 @@ namespace CentralitaHerencia
         }
 
         public Local(string origen, float duracion, string destino, float costo)
-            : base(duracion, origen, destino)
+            : base(duracion, destino, origen)
         {
             this.costo = costo;
 
@@ -48,7 +48,7 @@ namespace CentralitaHerencia
             StringBuilder datos = new StringBuilder();
 
             datos.AppendFormat("{0}", base.Mostrar());
-            datos.AppendFormat(" {0,-10}", this.CostoLlamada);
+            datos.AppendFormat(" {0,-15}", this.CostoLlamada);
 
             return datos.ToString();
         }

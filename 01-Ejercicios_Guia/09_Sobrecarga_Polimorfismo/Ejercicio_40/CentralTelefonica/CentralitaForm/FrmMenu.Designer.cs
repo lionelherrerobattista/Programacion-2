@@ -57,6 +57,7 @@ namespace CentralitaForm
             this.btnFacturacionTotal.TabIndex = 1;
             this.btnFacturacionTotal.Text = "Facturación Total";
             this.btnFacturacionTotal.UseVisualStyleBackColor = true;
+            this.btnFacturacionTotal.Click += new System.EventHandler(this.btnFacturacionTotal_Click);
             // 
             // btnFacturacionLocal
             // 
@@ -66,6 +67,7 @@ namespace CentralitaForm
             this.btnFacturacionLocal.TabIndex = 2;
             this.btnFacturacionLocal.Text = "Facturación Local";
             this.btnFacturacionLocal.UseVisualStyleBackColor = true;
+            this.btnFacturacionLocal.Click += new System.EventHandler(this.btnFacturacionLocal_Click);
             // 
             // btnFacturacionProvincial
             // 
@@ -75,6 +77,7 @@ namespace CentralitaForm
             this.btnFacturacionProvincial.TabIndex = 3;
             this.btnFacturacionProvincial.Text = "Facturación Provincial";
             this.btnFacturacionProvincial.UseVisualStyleBackColor = true;
+            this.btnFacturacionProvincial.Click += new System.EventHandler(this.btnFacturacionProvincial_Click);
             // 
             // btnSalir
             // 
@@ -84,6 +87,7 @@ namespace CentralitaForm
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmMenu
             // 
@@ -96,6 +100,7 @@ namespace CentralitaForm
             this.Controls.Add(this.btnFacturacionTotal);
             this.Controls.Add(this.btnGenerarLlamada);
             this.Name = "FrmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Central Telefónica";
             this.ResumeLayout(false);
 
