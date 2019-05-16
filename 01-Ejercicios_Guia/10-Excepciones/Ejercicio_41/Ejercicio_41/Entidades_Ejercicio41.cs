@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_41
 {
-  public class Divicion
+  public class Division
   {
     double numeroUno;
     double numeroDos;
