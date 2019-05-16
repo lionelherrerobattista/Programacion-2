@@ -66,7 +66,7 @@ namespace Entidades_Ejercicio_36
         }
 
         public Competencia(short cantidadVueltas, short cantidadCompetidores, TipoCompetencia tipo) : this()
-        {    
+        {
             this.CantidadVueltas = cantidadVueltas;
             this.CantidadCompetidores = cantidadCompetidores;
             this.Tipo = tipo;
@@ -76,29 +76,29 @@ namespace Entidades_Ejercicio_36
         {
             bool agregoCompetidor = false;
 
-                Random r = new Random();
+            Random r = new Random();
 
-            if(c.competidores.Count < c.cantidadCompetidores && c != a)
+            if (c.competidores.Count < c.cantidadCompetidores && c != a)
             {
-                    if(c.Tipo == TipoCompetencia.MotoCross && a is MotoCross)
-                    {
-                        c.competidores.Add(a);
-                        c.competidores[c.competidores.IndexOf(a)].EnCompetencia = true;
-                        c.competidores[c.competidores.IndexOf(a)].VueltasRestantes = c.cantidadVueltas;
-                        c.competidores[c.competidores.IndexOf(a)].CantidadCombustible = (short)r.Next(15, 101);
+                if (c.Tipo == TipoCompetencia.MotoCross && a is MotoCross)
+                {
+                    c.competidores.Add(a);
+                    c.competidores[c.competidores.IndexOf(a)].EnCompetencia = true;
+                    c.competidores[c.competidores.IndexOf(a)].VueltasRestantes = c.cantidadVueltas;
+                    c.competidores[c.competidores.IndexOf(a)].CantidadCombustible = (short)r.Next(15, 101);
 
-                        agregoCompetidor = true;
-                    }
+                    agregoCompetidor = true;
+                }
 
-                    if(c.Tipo == TipoCompetencia.F1 && a is AutoF1)
-                    {
-                        c.competidores.Add(a);
-                        c.competidores[c.competidores.IndexOf(a)].EnCompetencia = true;
-                        c.competidores[c.competidores.IndexOf(a)].VueltasRestantes = c.cantidadVueltas;
-                        c.competidores[c.competidores.IndexOf(a)].CantidadCombustible = (short)r.Next(15, 101);
+                if (c.Tipo == TipoCompetencia.F1 && a is AutoF1)
+                {
+                    c.competidores.Add(a);
+                    c.competidores[c.competidores.IndexOf(a)].EnCompetencia = true;
+                    c.competidores[c.competidores.IndexOf(a)].VueltasRestantes = c.cantidadVueltas;
+                    c.competidores[c.competidores.IndexOf(a)].CantidadCombustible = (short)r.Next(15, 101);
 
-                        agregoCompetidor = true;
-                    }
+                    agregoCompetidor = true;
+                }
 
 
             }
@@ -106,32 +106,32 @@ namespace Entidades_Ejercicio_36
             return agregoCompetidor;
         }
 
-    public static bool operator ==(Competencia c, VehiculoDeCarrera a)
-    {
-
-        int i;
-
-        bool sonIguales = false;
-
-        for (i = 0; i < c.competidores.Count; i++)
+        public static bool operator ==(Competencia c, VehiculoDeCarrera a)
         {
 
-          if (c.competidores[i] == a)
-          {
-              sonIguales = true;
+            int i;
 
-          }
+            bool sonIguales = false;
+
+            for (i = 0; i < c.competidores.Count; i++)
+            {
+
+                if (c.competidores[i] == a)
+                {
+                    sonIguales = true;
+
+                }
+
+            }
+
+            return sonIguales;
 
         }
 
-        return sonIguales;
-
-    }
-
-    public static bool operator !=(Competencia c, VehiculoDeCarrera a)
-    {
-        return !(c == a);
-    }
+        public static bool operator !=(Competencia c, VehiculoDeCarrera a)
+        {
+            return !(c == a);
+        }
 
 
     }
