@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_42
 {
-    class MiException : Exception
+    public class MiException : Exception
     {
         public MiException(string mensaje, Exception innerException)
             : base(mensaje, innerException)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_42
 {
-    class MiClase
+    public class MiClase
     {
         public static void Dividir()
         {

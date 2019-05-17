@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_42
 {
-    class OtraClase
+    public class OtraClase
     {
         //d. Luego crear un método de instancia que capture la excepción anterior.
         //Este método generará una excepción propia llamada MiException y la lanzará.

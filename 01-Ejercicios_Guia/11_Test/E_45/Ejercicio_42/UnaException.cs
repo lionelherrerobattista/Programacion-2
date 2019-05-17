@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_42
 {
-    class UnaException : Exception
+    public class UnaException : Exception
     {
         public UnaException(string mensaje)
             : base(mensaje)
