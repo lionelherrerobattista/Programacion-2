@@ -52,6 +52,8 @@
     <Compile Include="PuntoA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuntoB.cs" />
+    <Compile Include="PuntoC.cs" />
+    <Compile Include="PuntoD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,20 +8,24 @@ namespace UnitTestProject1
     public class PuntoA
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestDividir()
         {
             //Arrange
             bool capturoException = false;
+            double resultado;
+            int b = 0;
+
             //Act
             try
             {
-                MiClase.Dividir();
+                resultado = 10 / b;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                //Assert
-                Assert.ReferenceEquals(e, typeof(DivideByZeroException));
+
                 capturoException = true;
+                Assert.IsInstanceOfType(e, typeof(DivideByZeroException));
+
             }
 
             if(capturoException == false)

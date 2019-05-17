@@ -7,10 +7,10 @@ using Ejercicio_42;
 namespace UnitTestProject1
 {
     /// <summary>
-    /// Descripción resumida de UnitTest1
+    /// Descripción resumida de PuntoD
     /// </summary>
     [TestClass]
-    public class PuntoB
+    public class PuntoD
     {
 
 
@@ -55,24 +55,25 @@ namespace UnitTestProject1
         #endregion
 
         [TestMethod]
-        public void TestConstructorMiClase()
+        public void TestMiException()
         {
             //Arrange
-            MiClase clasePrueba;
+            OtraClase clasePrueba;
             bool capturoException = false;
             //Act
             try
             {
-                clasePrueba = new MiClase();
+                clasePrueba = new OtraClase();
+                clasePrueba.MiMetodoDeInstancia();
             }
-            catch (DivideByZeroException e)
+            catch (Exception e)
             {
                 //Assert
-                Assert.ReferenceEquals(e, typeof(DivideByZeroException));
+                Assert.IsInstanceOfType(e, typeof(MiException));
                 capturoException = true;
             }
 
-            if (capturoException == false)
+            if(capturoException == false)
             {
                 Assert.Fail();
             }

@@ -47,6 +47,7 @@ namespace CentralitaForm
                     case TipoLlamada.Local:
                         if (llamadaAux is Local)
                         {
+                            this.Text = "Facturación Local";
                             datos = String.Concat(datos, llamadaAux.ToString());
                             datos = String.Concat(datos, "\n");
                         }
@@ -54,11 +55,13 @@ namespace CentralitaForm
                     case TipoLlamada.Provincial:
                         if (llamadaAux is Provincial)
                         {
+                            this.Text = "Facturación Provincial";
                             datos = String.Concat(datos, llamadaAux.ToString());
                             datos = String.Concat(datos, "\n");
                         }
                         break;
                     default:
+                        this.Text = "Facturación Total";
                         datos = String.Concat(datos, llamadaAux.ToString());
                         datos = String.Concat(datos, "\n");
                         break;

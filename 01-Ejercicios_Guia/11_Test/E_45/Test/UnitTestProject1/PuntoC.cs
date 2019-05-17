@@ -10,9 +10,8 @@ namespace UnitTestProject1
     /// Descripción resumida de UnitTest1
     /// </summary>
     [TestClass]
-    public class PuntoB
+    public class PuntoC
     {
-
 
         private TestContext testContextInstance;
 
@@ -55,20 +54,21 @@ namespace UnitTestProject1
         #endregion
 
         [TestMethod]
-        public void TestConstructorMiClase()
+        public void TestUnaException()
         {
             //Arrange
-            MiClase clasePrueba;
             bool capturoException = false;
+            MiClase clasePrueba;
+
             //Act
             try
             {
-                clasePrueba = new MiClase();
+                clasePrueba = new MiClase(0);
             }
-            catch (DivideByZeroException e)
+            catch (Exception e)
             {
                 //Assert
-                Assert.ReferenceEquals(e, typeof(DivideByZeroException));
+                Assert.IsInstanceOfType(e, typeof(UnaException));
                 capturoException = true;
             }
 
@@ -76,6 +76,7 @@ namespace UnitTestProject1
             {
                 Assert.Fail();
             }
+
         }
     }
 }

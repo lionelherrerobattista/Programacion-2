@@ -48,7 +48,7 @@
             this.Controls.Add(this.rtbFacturacionTotal);
             this.Name = "FrmMostrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Facturacion Total";
+            this.Text = "Facturacion";
             this.Load += new System.EventHandler(this.FacturacionTotal_Load);
             this.ResumeLayout(false);
 
