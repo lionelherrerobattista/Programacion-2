@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="TestLista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestCentralitaException.cs" />
+    <Compile Include="TestLocalProvincia.cs" />
+    <Compile Include="TestLocalRepetida.cs" />
+    <Compile Include="TestProvincialRepetida.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
