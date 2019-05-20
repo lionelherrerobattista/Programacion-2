@@ -52,6 +52,9 @@
     <Compile Include="T01_ListaInstanciada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="T02_CompetenciaNoDisponible.cs" />
+    <Compile Include="T03_NoException.cs" />
+    <Compile Include="T04_AgregarVehiculo.cs" />
+    <Compile Include="T05_QuitarVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

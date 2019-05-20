@@ -7,12 +7,12 @@ using Entidades_Ejercicio_36;
 namespace TestCompetencia
 {
     /// <summary>
-    /// Descripción resumida de T02_CompetenciaNoDisponible
+    /// Descripción resumida de T05_QuitarVehiculo
     /// </summary>
     [TestClass]
-    public class T02_CompetenciaNoDisponible
+    public class T05_QuitarVehiculo
     {
-        public T02_CompetenciaNoDisponible()
+        public T05_QuitarVehiculo()
         {
             //
             // TODO: Agregar aquí la lógica del constructor
@@ -63,35 +63,34 @@ namespace TestCompetencia
         public void TestMethod1()
         {
             //Arrange
-            bool atrapoException = false;
 
             Competencia competenciaTest;
             AutoF1 autoTest;
-            
+
             //Act
-            competenciaTest = new Competencia(10, 20, Competencia.TipoCompetencia.MotoCross);
+            competenciaTest = new Competencia(10, 20, Competencia.TipoCompetencia.F1);
             autoTest = new AutoF1(20, "Ferrari");
 
             //Assert
-            try
+            if (competenciaTest + autoTest)
             {
-                if(competenciaTest + autoTest)
+                if (competenciaTest - autoTest)
                 {
-
+                    if (competenciaTest != autoTest)
+                    {
+                        //pasó el test
+                    }
+                    else
+                    {
+                        Assert.Fail();
+                    }
                 }
-
             }
-            catch(Exception e)
-            {
-                atrapoException = true;
-                Assert.IsInstanceOfType(e, typeof(CompetenciaNoDisponibleException));
-            }
-
-            if(atrapoException == false)
+            else
             {
                 Assert.Fail();
             }
-            
+
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Entidades_Ejercicio_36
             {
                 try
                 {
-                    if (c == a)
+                    if (c != a)
                     {
                         c.competidores.Add(a);
                         c.competidores[c.competidores.IndexOf(a)].EnCompetencia = true;
@@ -118,6 +118,22 @@ namespace Entidades_Ejercicio_36
             return agregoCompetidor;
         }
 
+        public static bool operator -(Competencia c, VehiculoDeCarrera a)
+        {
+            int i;
+            bool quito = false;
+
+            for(i = 0; i < c.Competidores.Count; i++)
+            {
+                if(c[i] == a)
+                {
+                    quito = c.competidores.Remove(c[i]);
+                }
+            }
+
+            return quito;
+        }
+
         /// <summary>
         /// Devuelve true si el auto es del mismo tipo
         /// y no forma parte de la competencia
@@ -128,7 +144,7 @@ namespace Entidades_Ejercicio_36
         public static bool operator ==(Competencia c, VehiculoDeCarrera a)
         {
             int i;
-            bool noFormaParte = true;
+            bool sonIguales = false;
 
             TipoCompetencia tipo;
 
@@ -144,7 +160,7 @@ namespace Entidades_Ejercicio_36
 
                             if (c[i] == a)
                             {
-                                noFormaParte = false;
+                                sonIguales = true;
 
                             }
 
@@ -152,7 +168,9 @@ namespace Entidades_Ejercicio_36
                     }
                     else
                     {
-                        noFormaParte = false;
+                       
+                        throw new CompetenciaNoDisponibleException("El vehículo no corresponde a la competencia",
+                            "Vehiculo", "operator ==");
 
                     }
                     break;
@@ -165,7 +183,7 @@ namespace Entidades_Ejercicio_36
 
                             if (c[i] == a)
                             {
-                                noFormaParte = false;
+                                sonIguales = true;
 
                             }
 
@@ -173,25 +191,22 @@ namespace Entidades_Ejercicio_36
                     }
                     else
                     {
-                        noFormaParte = false;
-
+                        
+                        throw new CompetenciaNoDisponibleException("El vehículo no corresponde a la competencia",
+                            "Vehiculo", "operator ==");
 
                     }
                     break;
 
                 default:
-                    noFormaParte = false;
-                    break;
+                   
+                    throw new CompetenciaNoDisponibleException("El vehículo no corresponde a la competencia",
+                        "Vehiculo", "operator ==");
+
   
             }
 
-            if(noFormaParte == false)
-            {
-                throw new CompetenciaNoDisponibleException("El vehículo no corresponde a la competencia",
-                    "Vehiculo", "operator ==");
-            }
-
-            return noFormaParte;
+            return sonIguales;
 
         }
 
