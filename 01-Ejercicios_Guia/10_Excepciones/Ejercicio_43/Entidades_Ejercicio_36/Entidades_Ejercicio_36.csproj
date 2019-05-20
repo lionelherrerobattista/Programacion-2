@@ -45,7 +45,6 @@
     <Compile Include="CompetenciaNoDisponibleException.cs" />
     <Compile Include="MotoCross.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipoCompetencia.cs" />
     <Compile Include="VehiculoDeCarrera.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
