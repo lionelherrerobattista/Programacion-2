@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Entidades_Ejercicio_47
 {
@@ -23,8 +24,9 @@ namespace Entidades_Ejercicio_47
             get
             {
                 int numeroRandom;
-                Equipo equipoUno;
-                Equipo equipoDos;
+
+                T equipoUno;
+                T equipoDos;
 
                 Random random = new Random();
 
@@ -40,7 +42,7 @@ namespace Entidades_Ejercicio_47
 
                 } while (equipoUno == equipoDos);
                 
-                return CalcularPartido(this.equipos[numeroRandom], this.equipos[numeroRandom]);
+                return CalcularPartido(equipoUno, equipoDos);
             }
         }
 
@@ -75,8 +77,8 @@ namespace Entidades_Ejercicio_47
 
             if (equipo1 is EquipoBasquet && equipo2 is EquipoBasquet)
             {
-                resultadoUno = random.Next(0, 121);
-                resultadoDos = random.Next(0, 121);
+                resultadoUno = random.Next(60, 121);
+                resultadoDos = random.Next(60, 121);
             }
 
 
@@ -111,7 +113,7 @@ namespace Entidades_Ejercicio_47
         {
             bool agregoTorneo = false;
 
-            if (t != e1)
+            if (t != e1 && e1 is T)//T depende del tipo de torneo
             {
                 agregoTorneo = true;
                 t.equipos.Add((T)e1);
