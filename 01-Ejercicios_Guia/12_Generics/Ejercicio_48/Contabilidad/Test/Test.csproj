@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Entidades_Ejercicio_48.csproj">
+      <Project>{cdda6b90-4a01-4680-81c4-dd0070fcea3a}</Project>
+      <Name>Entidades_Ejercicio_48</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

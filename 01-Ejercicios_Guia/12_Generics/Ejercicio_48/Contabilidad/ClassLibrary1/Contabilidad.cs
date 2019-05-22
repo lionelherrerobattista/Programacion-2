@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Entidades_Ejercicio_48
 {
   public class Contabilidad<T, U>
+    where T : Documento
+    where U : Documento, new()
   {
     private List<T> egresos;
     private List<U> ingresos;
