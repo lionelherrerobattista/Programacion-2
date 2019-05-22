@@ -40,7 +40,7 @@ namespace Torneos
             equipoSeis = new EquipoBasquet("Raptors", DateTime.Now.Date);
 
             //Agrego equipos a torneo de fútbol
-            Console.WriteLine("--------------Equipos Fútbol---------------");
+            Console.WriteLine("---------Equipos Fútbol----------");
             if (torneoFutbol + equipoUno)
             {
                 Console.WriteLine("Equipo agregado.");
@@ -88,7 +88,7 @@ namespace Torneos
             }
 
 
-            Console.WriteLine("--------------Equipos Básquet--------------");
+            Console.WriteLine("--------Equipos Básquet----------");
 
             //Agrego equipos a torneo de básquet
 
@@ -128,7 +128,7 @@ namespace Torneos
                 Console.WriteLine("Error");
             }
 
-            if(torneoFutbol + equipoCinco)
+            if(torneoBasquet + equipoDos)//no debería agregar
             {
                 Console.WriteLine("Equipo agregado.");
             }
@@ -136,20 +136,16 @@ namespace Torneos
             {
                 Console.WriteLine("Error");
             }
-
+            Console.WriteLine("");
 
             //Muestro torneos
-            Console.WriteLine("");
-
+            Console.WriteLine("----------Info Torneos-----------");          
             Console.WriteLine(torneoFutbol.Mostrar());
-
-            Console.WriteLine("");
-
             Console.WriteLine(torneoBasquet.Mostrar());
 
             //Simulo partidos
-            Console.WriteLine("--------------Partidos--------------");
-            Console.WriteLine("Futbol:");
+            Console.WriteLine("-----------Partidos--------------");
+            Console.WriteLine("Fútbol:");
             Console.WriteLine(torneoFutbol.JugarPartido);
             Thread.Sleep(200);
             Console.WriteLine(torneoFutbol.JugarPartido);
