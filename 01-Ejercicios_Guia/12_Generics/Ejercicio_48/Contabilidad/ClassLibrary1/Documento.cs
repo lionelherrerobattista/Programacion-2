@@ -10,6 +10,16 @@ namespace Entidades_Ejercicio_48
   {
     private int numero;
 
+    public int Numero
+    {
+      get
+      {
+        return this.numero;
+      }
+    }
+      
+
+
     public Documento(int numero)
     {
       this.numero = numero;

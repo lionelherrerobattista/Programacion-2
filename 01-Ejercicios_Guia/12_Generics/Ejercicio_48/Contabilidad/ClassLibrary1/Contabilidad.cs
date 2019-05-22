@@ -19,6 +19,22 @@ namespace Entidades_Ejercicio_48
       this.ingresos = new List<U>();
     }
 
+    public List<T> Egresos
+    {
+      get
+      {
+        return this.egresos;
+      }
+    }
+
+    public List<U> Ingresos
+    {
+      get
+      {
+        return this.ingresos;
+      }
+    }
+
     public static Contabilidad<T, U> operator +(Contabilidad<T, U> c, T egreso)
     {
 
