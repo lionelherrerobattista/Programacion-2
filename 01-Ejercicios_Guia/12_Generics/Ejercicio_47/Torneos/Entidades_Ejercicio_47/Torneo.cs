@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -109,14 +109,14 @@ namespace Entidades_Ejercicio_47
             return !(t == e1);
         }
 
-        public static bool operator +(Torneo<T> t, Equipo e1)
+        public static bool operator +(Torneo<T> t, T e1)
         {
             bool agregoTorneo = false;
 
             if (t != e1 && e1 is T)//T depende del tipo de torneo
             {
                 agregoTorneo = true;
-                t.equipos.Add((T)e1);
+                t.equipos.Add(e1);
             }
 
             return agregoTorneo;

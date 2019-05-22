@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,14 +78,14 @@ namespace Torneos
             }
 
 
-            if (torneoFutbol + equipoCuatro)//no debería agregar
+            /*if (torneoFutbol + equipoCuatro)//no debería agregar
             {
                 Console.WriteLine("Equipo agregado.");
             }
             else
             {
                 Console.WriteLine("Error");
-            }
+            }*/
 
 
             Console.WriteLine("--------Equipos Básquet----------");
@@ -128,14 +128,14 @@ namespace Torneos
                 Console.WriteLine("Error");
             }
 
-            if(torneoBasquet + equipoDos)//no debería agregar
+            /*if(torneoBasquet + equipoDos)//no debería agregar
             {
                 Console.WriteLine("Equipo agregado.");
             }
             else
             {
                 Console.WriteLine("Error");
-            }
+            }*/
             Console.WriteLine("");
 
             //Muestro torneos
