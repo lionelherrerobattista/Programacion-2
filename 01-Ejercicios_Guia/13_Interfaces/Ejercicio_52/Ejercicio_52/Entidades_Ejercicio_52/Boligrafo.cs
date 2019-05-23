@@ -25,7 +25,7 @@ namespace Entidades_Ejercicio_52
       }
       set
       {
-        //...
+        this.colorTinta = value;
       }
     }
 
@@ -33,11 +33,11 @@ namespace Entidades_Ejercicio_52
     {
       get
       {
-        //...
+        return this.tinta;
       }
       set
       {
-        //...
+        this.tinta = value;
       }
     }
 
@@ -45,7 +45,14 @@ namespace Entidades_Ejercicio_52
 
     public EscrituraWrapper Escribir(string texto)
     {
-      this.tinta = (float)0.3 * this.UnidadesDeEscritura;
+      EscrituraWrapper escritura;
+
+      escritura = new EscrituraWrapper(texto, this.Color);
+
+      this.UnidadesDeEscritura -= (float)0.3 * texto.Count();
+
+      return escritura;
+      
     }
 
     public bool Recargar(int unidades)
@@ -61,7 +68,11 @@ namespace Entidades_Ejercicio_52
 
     public override string ToString()
     {
-      return base.ToString();
+      string datos;
+
+      datos = String.Format("Tipo:{0} Color:{1} Nivel de tinta:{2}", "Boligrafo", this.Color, this.UnidadesDeEscritura);
+
+      return datos;
     }
 
 
