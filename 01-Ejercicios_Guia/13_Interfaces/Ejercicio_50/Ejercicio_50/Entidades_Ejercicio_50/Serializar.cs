@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades_Ejercicio_50
 {
-  public class Serializar <S, V>
+  public class Serializar <S, V> //Agregar que herede de la interfaz
   {
     bool Guardar(S obj)
     {
