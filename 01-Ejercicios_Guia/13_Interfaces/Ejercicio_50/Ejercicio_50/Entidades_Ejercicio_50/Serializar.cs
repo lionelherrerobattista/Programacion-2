@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades_Ejercicio_50
 {
-  public class Serializar <S, V> //Agregar que herede de la interfaz
-  {
-    bool Guardar(S obj)
+  public class Serializar <S, V> : IGuardar <S, V>
+  {   
+
+    public bool Guardar(S obj)
     {
       return true;
     }
 
-    V Leer()
+    public V Leer()
     {
-      string mensaje = "objeto leido";
+      string mensaje = "Objeto leido";
 
       return (V)Convert.ChangeType(mensaje, typeof(V));
     }

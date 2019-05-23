@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Entidades_Ejercicio_50
 {
-  class GuardarTexto<T, V>
+  public class GuardarTexto<T, V> : IGuardar<T, V>
   {
-    //bool Guardar
+    public bool Guardar(T obj)
+    {
+      return true;
+    }
+
+    public V Leer()
+    {
+      string mensaje = "Texto leido";
+
+      return (V)Convert.ChangeType(mensaje, typeof(V));
+    }
   }
 }
