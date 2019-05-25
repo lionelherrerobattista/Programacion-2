@@ -43,7 +43,7 @@ namespace Ejercicio_42
 
             }
 
-            path = "lala";
+            //path = "lala";
 
             //Leo el archivo y muestro por pantalla
             try
