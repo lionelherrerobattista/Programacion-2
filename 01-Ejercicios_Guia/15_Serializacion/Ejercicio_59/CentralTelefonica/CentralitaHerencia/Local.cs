@@ -70,16 +70,16 @@ namespace CentralitaHerencia
       XmlSerializer ser;
 
       path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-      path = String.Format("{0}\\Local.txt", path);
+      path = String.Format("{0}\\Local.xml", path);
 
       this.RutaDeArchivo = path;
 
       writer = new XmlTextWriter(this.RutaDeArchivo, Encoding.UTF8);
 
-      ser = new XmlSerializer(typeof(string));
+      ser = new XmlSerializer(typeof(Local));
 
       //guardo los datos de la clase
-      ser.Serialize(writer, this.ToString());
+      ser.Serialize(writer, this);
       
       writer.Close();
 
@@ -95,11 +95,29 @@ namespace CentralitaHerencia
 
     public Local Leer()
     {
-      throw new NotImplementedException();
+      Local auxiliarLocal;
+
+      XmlTextReader reader;
+      XmlSerializer ser;
+
+      reader = new XmlTextReader(this.RutaDeArchivo);
+
+      ser = new XmlSerializer(typeof(Local));
+
+      auxiliarLocal = (Local)ser.Deserialize(reader);
+
+      reader.Close();
+
+      if(auxiliarLocal is Local)
+      {
+        return auxiliarLocal;
+      }
+      else
+      {
+        throw new InvalidCastException();
+      }
+
     }
-
-
-
 
     protected override string Mostrar()
     {
