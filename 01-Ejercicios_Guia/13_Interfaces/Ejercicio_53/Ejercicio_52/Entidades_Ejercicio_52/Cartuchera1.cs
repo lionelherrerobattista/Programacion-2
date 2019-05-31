@@ -8,14 +8,39 @@ namespace Entidades_Ejercicio_52
 {
   class Cartuchera1
   {
-    private List<IAcciones> lista;
+    public List<IAcciones> lista;
 
     public bool ProbarElementos()
     {
-      foreach(IAcciones e in lista)
+      
+      string texto;
+
+      EscrituraWrapper elemento;
+
+      foreach (IAcciones e in this.lista)
       {
-        e.Escribir("0");
+        //tomo el elemento
+        elemento = e.Escribir("*");
+
+        texto = elemento.texto;
+
+        //escribo
+        Console.WriteLine(texto);
+
+        if(texto.Count() > 0)
+        {
+          return true;
+        }
+        else//si no escribio
+        {
+          //recargo antes de salir
+          e.Recargar(1);
+
+          return false;
+        }
       }
+
+   
     }
 
 
