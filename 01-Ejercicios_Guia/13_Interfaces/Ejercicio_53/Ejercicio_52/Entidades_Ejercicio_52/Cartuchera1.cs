@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades_Ejercicio_52
 {
-  class Cartuchera1
+  public class Cartuchera1
   {
     public List<IAcciones> lista;
+
+    public Cartuchera1()
+    {
+      this.lista = new List<IAcciones>();
+    }
 
     public bool ProbarElementos()
     {
@@ -19,28 +24,27 @@ namespace Entidades_Ejercicio_52
 
       foreach (IAcciones e in this.lista)
       {
+        
+
         //tomo el elemento
         elemento = e.Escribir("*");
 
         texto = elemento.texto;
 
         //escribo
-        Console.WriteLine(texto);
+        Console.Write(texto);
 
-        if(texto.Count() > 0)
+        if (texto.Count() == 0)
         {
-          return true;
-        }
-        else//si no escribio
-        {
-          //recargo antes de salir
-          e.Recargar(1);
 
           return false;
+          
         }
+
       }
 
-   
+      return true;
+
     }
 
 

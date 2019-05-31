@@ -43,9 +43,18 @@ namespace Entidades_Ejercicio_52
     {
       EscrituraWrapper escritura;
 
-      escritura = new EscrituraWrapper(texto, ((IAcciones)this).Color);//Primero hay que castearlo
+      
 
-      ((IAcciones)this).UnidadesDeEscritura -= (float)0.1 * texto.Count();
+      if (this.tamanioMina > 0)
+      {
+        escritura = new EscrituraWrapper(texto, ((IAcciones)this).Color);//Primero hay que castearlo
+
+        ((IAcciones)this).UnidadesDeEscritura -= (float)0.1 * texto.Count();
+      }
+      else
+      {
+        escritura = new EscrituraWrapper("", ((IAcciones)this).Color);
+      }
 
       return escritura;
     }

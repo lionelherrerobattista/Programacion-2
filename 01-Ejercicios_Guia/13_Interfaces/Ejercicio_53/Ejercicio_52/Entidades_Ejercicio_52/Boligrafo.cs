@@ -46,10 +46,19 @@ namespace Entidades_Ejercicio_52
     public EscrituraWrapper Escribir(string texto)
     {
       EscrituraWrapper escritura;
+      ConsoleColor colorOriginal = Console.ForegroundColor;
 
-      escritura = new EscrituraWrapper(texto, this.Color);
+      if (this.tinta > 0)
+      {
 
-      this.UnidadesDeEscritura -= (float)0.3 * texto.Count();
+        escritura = new EscrituraWrapper(texto, this.Color);
+
+        this.UnidadesDeEscritura -= (float)0.3 * texto.Count();
+      }
+      else
+      {
+        escritura = new EscrituraWrapper("", this.Color);
+      }
 
       return escritura;
       

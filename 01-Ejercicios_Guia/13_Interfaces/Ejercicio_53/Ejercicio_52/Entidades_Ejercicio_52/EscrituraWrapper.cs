@@ -15,6 +15,7 @@ namespace Entidades_Ejercicio_52
     {
       this.color = color;
       this.texto = texto;
+
     }
 
   }
