@@ -29,12 +29,14 @@ namespace Grados
         //
         public static explicit operator Celsius(Fahrenheit f)
         {
-            return (f.GetGrados() - 32) / (9 / 5);
+            //Pasar uno a double
+            return new Celsius(((f.GetGrados() - 32) * (5 / 9d)));
         }
 
         public static explicit operator Kelvin(Fahrenheit f)
         {
-            return (f.GetGrados() + 459.67) / (9 / 5);
+            //Pasar un numero de la división a double
+            return new Kelvin((f.GetGrados() + 459.67) / (9 / 5d));
         }
 
         //Getters
@@ -49,7 +51,8 @@ namespace Grados
         //
         public static implicit operator Fahrenheit(double grados)
         {
-            return (Fahrenheit)grados;
+            //Creo un nuevo objeto
+            return new Fahrenheit(grados);
         }
 
 

@@ -28,12 +28,12 @@ namespace Grados
         //Conversiones explícitas
         public static explicit operator Fahrenheit(Celsius c)
         {
-            return c.GetGrados() * (9 / 5) + 32;
+            return new Fahrenheit(c.GetGrados() * (9 / 5d) + 32);
         }
 
         public static explicit operator Kelvin(Celsius c)
         {
-            return c.GetGrados() + 273.15;
+            return new Kelvin(c.GetGrados() + 273.15);
         }
 
         //Getters
@@ -47,7 +47,7 @@ namespace Grados
         //
         public static implicit operator Celsius(double grados)
         {
-            return (Celsius)grados;
+            return new Celsius(grados);
         }
     }
 }
