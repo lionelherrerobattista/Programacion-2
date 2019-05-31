@@ -22,7 +22,12 @@ namespace CentralitaHerencia
 
     protected Franja franjaHoraria;
     private string rutaDeArchivo;
+    private float costoLlamada;
 
+    public Provincial()
+    {
+
+    }
 
     public Provincial(Franja miFranja, Llamada llamada)
         : base(llamada.Duracion, llamada.NroDestino, llamada.NroOrigen)
@@ -47,6 +52,10 @@ namespace CentralitaHerencia
       {
         return this.CalcularCosto();
 
+      }
+      set
+      {
+        this.costoLlamada = this.CalcularCosto();
       }
     }
 
@@ -94,7 +103,7 @@ namespace CentralitaHerencia
       XmlSerializer ser;
 
       path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-      path = String.Format("{0}\\Provincial.xml", path);
+      path = String.Format("{0}\\Llamadas\\Provincial.xml", path);
 
       this.RutaDeArchivo = path;
 

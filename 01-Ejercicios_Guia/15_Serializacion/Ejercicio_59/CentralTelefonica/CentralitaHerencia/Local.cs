@@ -12,29 +12,50 @@ namespace CentralitaHerencia
   public class Local : Llamada, IGuardar<Local>
   {
     protected float costo;
+    private float costoLlamada;
     private string rutadeArchivo;
 
+    public Local()
+    {
+
+    }
 
     public Local(Llamada llamada, float costo)
         : base(llamada.Duracion, llamada.NroDestino, llamada.NroOrigen)
     {
       this.costo = costo;
-
+      
 
     }
 
     public Local(string origen, float duracion, string destino, float costo)
         : base(duracion, destino, origen)
     {
-      this.costo = costo;
+      this.Costo = costo;
 
+    }
+
+    public float Costo
+    {
+      get
+      {
+        return this.costo;
+      }
+      set
+      {
+        this.costo = value;
+      }
     }
 
     public override float CostoLlamada
     {
       get
       {
-        return this.CalcularCosto();
+        return this.costoLlamada;
+      }
+      set
+      {
+        this.costoLlamada = value;
       }
     }
 
@@ -70,7 +91,7 @@ namespace CentralitaHerencia
       XmlSerializer ser;
 
       path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-      path = String.Format("{0}\\Local.xml", path);
+      path = String.Format("{0}\\Llamadas\\Local.xml", path);
 
       this.RutaDeArchivo = path;
 
@@ -122,6 +143,8 @@ namespace CentralitaHerencia
     protected override string Mostrar()
     {
       StringBuilder datos = new StringBuilder();
+
+      this.CostoLlamada = this.CalcularCosto();
 
       datos.AppendFormat("{0}", base.Mostrar());
       datos.AppendFormat(" {0,-15}", this.CostoLlamada);
