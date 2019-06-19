@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_40
+namespace Ejercicio_69
 {
-    public class Class1
-    {
-    }
+    public delegate void DelegadoNombreLbl(string nombre);
 }
