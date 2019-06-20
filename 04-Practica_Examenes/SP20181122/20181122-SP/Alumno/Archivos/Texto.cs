@@ -60,9 +60,15 @@ namespace Archivos
 
         auxDatos = sr.ReadLine();
 
-        auxPatente.CodigoPatente = auxDatos;
+        try
+        {
+          patentes.Enqueue(auxDatos.ValidarPatente());
+        }
+        catch(PatenteInvalidaException e)
+        {
 
-        patentes.Enqueue(auxPatente);
+        }
+        
 
       } while (auxDatos != "");
 
