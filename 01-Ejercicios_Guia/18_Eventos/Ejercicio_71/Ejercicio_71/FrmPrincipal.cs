@@ -14,6 +14,8 @@ namespace Ejercicio_69
     {
         private FrmTestDelegados frmTestDelegados;
         private FrmMostrar frmMostrar;
+        private FrmDatosAlumno frmDatosAlumno;
+        private FrmAltaAlumno frmAltaAlumno;
 
        
 
@@ -44,6 +46,33 @@ namespace Ejercicio_69
 
             this.frmTestDelegados.ActualizarNombre += this.frmMostrar.ActualizarNombre;
             this.frmTestDelegados.ActualizarFoto += this.frmMostrar.ActualizarFoto;
+        }
+
+        private void datosAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.frmDatosAlumno = new FrmDatosAlumno();
+
+            this.frmDatosAlumno.Owner = this;
+
+            this.frmDatosAlumno.MdiParent = this;
+
+            this.frmDatosAlumno.Show();
+
+            //suscribo al evento
+            this.frmAltaAlumno.AlumnoNuevo += this.frmDatosAlumno.ActualizarAlumno;
+        }
+
+        private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.frmAltaAlumno = new FrmAltaAlumno();
+
+            this.frmAltaAlumno.Owner = this;
+
+            this.frmAltaAlumno.MdiParent = this;
+
+            this.frmAltaAlumno.Show();
+
+            this.datosAlumnoToolStripMenuItem.Enabled = true;
         }
     }
 }

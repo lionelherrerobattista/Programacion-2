@@ -33,6 +33,7 @@
             this.testDelegadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             // 
             this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.altaToolStripMenuItem,
-            this.mostrarToolStripMenuItem});
+            this.mostrarToolStripMenuItem,
+            this.datosAlumnoToolStripMenuItem});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
             this.mstMenu.Size = new System.Drawing.Size(800, 24);
@@ -59,7 +61,7 @@
             // testDelegadosToolStripMenuItem
             // 
             this.testDelegadosToolStripMenuItem.Name = "testDelegadosToolStripMenuItem";
-            this.testDelegadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testDelegadosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.testDelegadosToolStripMenuItem.Text = "Test Delegados";
             this.testDelegadosToolStripMenuItem.Click += new System.EventHandler(this.testDelegadosToolStripMenuItem_Click);
             // 
@@ -68,6 +70,7 @@
             this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
             this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alumnoToolStripMenuItem.Text = "Alumno";
+            this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
             // 
             // mostrarToolStripMenuItem
             // 
@@ -76,6 +79,14 @@
             this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.mostrarToolStripMenuItem.Text = "Mostrar";
             this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
+            // 
+            // datosAlumnoToolStripMenuItem
+            // 
+            this.datosAlumnoToolStripMenuItem.Enabled = false;
+            this.datosAlumnoToolStripMenuItem.Name = "datosAlumnoToolStripMenuItem";
+            this.datosAlumnoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.datosAlumnoToolStripMenuItem.Text = "Datos Alumno";
+            this.datosAlumnoToolStripMenuItem.Click += new System.EventHandler(this.datosAlumnoToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -101,6 +112,7 @@
         private System.Windows.Forms.ToolStripMenuItem testDelegadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alumnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem datosAlumnoToolStripMenuItem;
     }
 }
 

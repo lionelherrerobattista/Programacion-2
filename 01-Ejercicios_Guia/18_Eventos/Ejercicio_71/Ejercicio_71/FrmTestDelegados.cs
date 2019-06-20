@@ -16,7 +16,7 @@ namespace Ejercicio_69
         private string rutaFoto;
 
         public event DelegadoNombreLbl ActualizarNombre;
-        public event DelegadoPictureBox ActualizarFoto;
+        public event DelegadoNombreLbl ActualizarFoto;
 
         public FrmTestDelegados()
         {
@@ -36,7 +36,7 @@ namespace Ejercicio_69
             //Pido al usuario que seleccione una foto
             if(this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                this.rutaFoto = openFileDialog1.FileName;
+                this.rutaFoto = this.openFileDialog1.FileName;
             }
         }
     }

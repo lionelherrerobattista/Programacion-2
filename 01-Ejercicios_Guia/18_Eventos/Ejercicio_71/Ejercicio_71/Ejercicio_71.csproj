@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelegadoNombreLbl.cs" />
+    <Compile Include="FrmAltaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaAlumno.Designer.cs">
+      <DependentUpon>FrmAltaAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDatosAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosAlumno.Designer.cs">
+      <DependentUpon>FrmDatosAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAltaAlumno.resx">
+      <DependentUpon>FrmAltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatosAlumno.resx">
+      <DependentUpon>FrmDatosAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMostrar.resx">
       <DependentUpon>FrmMostrar.cs</DependentUpon>
     </EmbeddedResource>
