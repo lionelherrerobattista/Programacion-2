@@ -42,7 +42,6 @@ namespace Ejercicio_69
            
             this.frmMostrar.Show();
 
-            //Asocio los manejadores a los eventos
             this.frmTestDelegados.ActualizarNombre += this.frmMostrar.ActualizarNombre;
             this.frmTestDelegados.ActualizarFoto += this.frmMostrar.ActualizarFoto;
         }

@@ -15,9 +15,8 @@ namespace Ejercicio_69
     {
         private string rutaFoto;
 
-        //Uso el mismo delegado (tienen la misma firma)
         public event DelegadoNombreLbl ActualizarNombre;
-        public event DelegadoNombreLbl ActualizarFoto;
+        public event DelegadoPictureBox ActualizarFoto;
 
         public FrmTestDelegados()
         {
@@ -27,12 +26,10 @@ namespace Ejercicio_69
         
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            //Invoco a los eventos
             this.ActualizarNombre.Invoke(this.txtDatos.Text);
             this.ActualizarFoto.Invoke(this.rutaFoto);
             
         }
-
 
         private void btnBuscarFoto_Click(object sender, EventArgs e)
         {
