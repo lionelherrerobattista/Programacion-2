@@ -14,48 +14,53 @@ using Entidades;
 
 namespace Patentes
 {
-  public delegate void MostrarPatente(object patente);
+    public delegate void MostrarPatente(object patente);
 
-  public delegate void FinExposicionPatente(VistaPatente vp);
+    public delegate void FinExposicionPatente(VistaPatente vp);
 
 
-  public partial class VistaPatente : UserControl
-  {
-    public VistaPatente()
+    public partial class VistaPatente : UserControl
     {
-      InitializeComponent();
-
-      picPatente.Image = fondosPatente.Images[(int)Patente.Tipo.Mercosur];
-    }
-
-    public void MostrarPatente(object patente)
-    {
-      if (lblPatenteNro.InvokeRequired)
-      {
-        try
+        public VistaPatente()
         {
-          Random r = new Random();
+            InitializeComponent();
 
-          // Llamar al hilo principal
-          this.
-
-
-          Thread.Sleep(r.Next(2000, 5000));
-
-          // Agregar evento de que finalizó la exposición de la patente
-          this.finExposicion.Invoke(this);
+            picPatente.Image = fondosPatente.Images[(int)Patente.Tipo.Mercosur];
         }
-        catch (Exception) { }
-      }
-      else
-      {
-        picPatente.Image = fondosPatente.Images[(int)((Patente)patente).TipoCodigo];
-        lblPatenteNro.Text = patente.ToString();
-      }
+
+        public void MostrarPatente(object patente)
+        {
+            if (lblPatenteNro.InvokeRequired)
+            {
+                try
+                {
+                    Random r = new Random();
+
+                    // Llamar al hilo principal
+                    //revisar
+                    this.lblPatenteNro.BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        picPatente.Image = fondosPatente.Images[(int)((Patente)patente).TipoCodigo];
+                        lblPatenteNro.Text = patente.ToString();
+                    });
+
+
+                    Thread.Sleep(r.Next(2000, 5000));
+
+                    // Agregar evento de que finalizó la exposición de la patente
+                    this.finExposicion.Invoke(this);
+                }
+                catch (Exception) { }
+            }
+            else
+            {
+                picPatente.Image = fondosPatente.Images[(int)((Patente)patente).TipoCodigo];
+                lblPatenteNro.Text = patente.ToString();
+            }
+        }
+
+        public event FinExposicionPatente finExposicion;
+
+
     }
-
-    public event FinExposicionPatente finExposicion;
-
-
-  }
 }

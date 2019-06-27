@@ -12,6 +12,7 @@ namespace Entidades
         {
             Vieja, Mercosur
         }
+
         private Tipo tipoCodigo;
         private string codPatente;
 

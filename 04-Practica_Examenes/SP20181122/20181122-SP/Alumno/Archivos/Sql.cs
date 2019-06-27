@@ -20,7 +20,7 @@ namespace Archivos
     {
       string conexionStr;
 
-      conexionStr = "Data Source=patentes-sp-2018; Initial Catalog =Patentes; Integrated Security = True";
+      conexionStr = "Data Source=.\\SQLEXPRESS; Initial Catalog =patentes-sp-2018; Integrated Security = True";
 
       this.conexion = new SqlConnection(conexionStr);
 
@@ -39,7 +39,7 @@ namespace Archivos
 
       foreach (Patente p in datos)
       {
-        consulta = String.Format("INSERT INTO Patentes (patente, tipo) VALUES ('{0}','{1}')", p.CodigoPatente, p.TipoCodigo);
+        consulta = String.Format("INSERT INTO {0} (patente, tipo) VALUES ('{1}','{2}')", tabla, p.CodigoPatente, p.TipoCodigo);
 
         comando.CommandText = consulta;
 
@@ -60,7 +60,7 @@ namespace Archivos
       
       SqlDataReader oDr;
 
-      this.comando.CommandText = "SELECT patente, tipo FROM Patentes";
+      this.comando.CommandText = String.Format("SELECT patente, tipo FROM {0}", tabla);
 
       this.conexion.Open();
 

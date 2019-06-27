@@ -9,8 +9,12 @@ using System.Xml;
 
 namespace Archivos
 {
-  public class Xml<T> : IArchivo<T>
-  {
+    public class Xml<T> : IArchivo<T>
+    {
+        
+
+           
+
     public void Guardar(string archivo, T datos)
     {
       string path;
@@ -33,7 +37,6 @@ namespace Archivos
     public void Leer(string archivo, out T datos)
     {
       string path;
-
 
       XmlTextReader reader;
       XmlSerializer ser;
